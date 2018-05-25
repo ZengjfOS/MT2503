@@ -7,6 +7,7 @@
 
 ## 分析、测试、验证文档
 
+* [0005_Example_GPIO_Hacking.md](docs/0005_Example_GPIO_Hacking.md)
 * [0004_OpenCPU_Quick_Start_Application_Note.md](docs/0004_OpenCPU_Quick_Start_Application_Note.md)
 * [0003_Make_Hacking.md](docs/0003_Make_Hacking.md)
 * [0002_Download_Prebuild_FW.md](docs/0002_Download_Prebuild_FW.md)
