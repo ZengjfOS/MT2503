@@ -7,5 +7,6 @@
 
 ## 分析、测试、验证文档
 
+* [0003_Make_Hacking.md](docs/0003_Make_Hacking.md)
 * [0002_Download_Prebuild_FW.md](docs/0002_Download_Prebuild_FW.md)
 * [0001_Just_Run_Test.md](docs/0001_Just_Run_Test.md)
