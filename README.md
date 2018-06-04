@@ -7,6 +7,7 @@
 
 ## 分析、测试、验证文档
 
+* [0007_MT2503_ENV_Build.md](./docs/0007_MT2503_ENV_Build.md)
 * [0006_WZ203CS-V3.0_MQTT_app.md](./docs/0006_WZ203CS-V3.0_MQTT_app.md)
 * [0005_Example_GPIO_Hacking.md](docs/0005_Example_GPIO_Hacking.md)
 * [0004_OpenCPU_Quick_Start_Application_Note.md](docs/0004_OpenCPU_Quick_Start_Application_Note.md)
