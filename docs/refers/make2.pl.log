@@ -1,0 +1,2518 @@
+PS D:\MTK2503\SDK> .\make ULTRA2503A_11C GPRS new
+ENV{"OS"}: Windows_NT
+thanks, you gave me 3 command-line arguments.
+ULTRA2503A_11C
+GPRS
+new
+ARGV[1]: gprs ULTRA2503A_11C
+SubReleaseConfig.ini:  not exists or is a directory
+project=gprs
+#ARGV=0, ARGV[0]=new
+action = new
+ENV{'MTK_INTERNAL'}:
+MoDIS_VC9 directory exist
+actions before ---- :
+ getusr new update remake clean resgen codegen nvram_auto_gen bootloader fota emiclean emigen sysgen sys_auto_gen sys_me
+m_gen ckscatter mmi_feature_check mmi_obj_check operator_check viewlog rel c,r c,u ckcr dummy_data_check lint removecode
+ custpack custpackini theme_bin scan check_scan check ck3rdptylic check_dep remake_dep update_dep cci clean_codegen slim
+_codegen slim_mcddll mcddll_update slim_update crip genlog ckmemcons findpad elfpatch gendsp cksysdrv nvram_auto_gen xml
+_parser rmdebugobj cust_menu_tree_check genmoduleinfo gen_modlibtbl ximgen gen_bt_switch_info gendummylis echo_dspinfo g
+enmakefile video_mem_gen obj_sys_auto_gen dcm_debug
+actions after ---- :
+ codegen_vre_modis mtegen at_modis ap_modis ap_uesim c,r_modis c,u_modis c,r_uesim c,u_uesim remake_modis clean_modis up
+date_modis remake_uesim clean_uesim update_uesim codegen_modis clean_codegen_modis codegen_uesim clean_codegen_uesim gen
+_modis gen_uesim new_modis sys_mem_gen_modis new_uesim sys_mem_gen_uesim getusr new update remake clean resgen codegen n
+vram_auto_gen bootloader fota emiclean emigen sysgen sys_auto_gen sys_mem_gen ckscatter mmi_feature_check mmi_obj_check
+operator_check viewlog rel c,r c,u ckcr dummy_data_check lint removecode custpack custpackini theme_bin scan check_scan
+check ck3rdptylic check_dep remake_dep update_dep cci clean_codegen slim_codegen slim_mcddll mcddll_update slim_update c
+rip genlog ckmemcons findpad elfpatch gendsp cksysdrv nvram_auto_gen xml_parser rmdebugobj cust_menu_tree_check genmodul
+einfo gen_modlibtbl ximgen gen_bt_switch_info gendummylis echo_dspinfo genmakefile video_mem_gen obj_sys_auto_gen dcm_de
+bug
+actions after ---- :
+ codegen_vre_modis mtegen at_modis ap_modis ap_uesim c,r_modis c,u_modis c,r_uesim c,u_uesim remake_modis clean_modis up
+date_modis remake_uesim clean_uesim update_uesim codegen_modis clean_codegen_modis codegen_uesim clean_codegen_uesim gen
+_modis gen_uesim new_modis sys_mem_gen_modis new_uesim sys_mem_gen_uesim getusr new update remake clean resgen codegen n
+vram_auto_gen bootloader fota emiclean emigen sysgen sys_auto_gen sys_mem_gen ckscatter mmi_feature_check mmi_obj_check
+operator_check viewlog rel c,r c,u ckcr dummy_data_check lint removecode custpack custpackini theme_bin scan check_scan
+check ck3rdptylic check_dep remake_dep update_dep cci clean_codegen slim_codegen slim_mcddll mcddll_update slim_update c
+rip genlog ckmemcons findpad elfpatch gendsp cksysdrv nvram_auto_gen xml_parser rmdebugobj cust_menu_tree_check genmodul
+einfo gen_modlibtbl ximgen gen_bt_switch_info gendummylis echo_dspinfo genmakefile video_mem_gen obj_sys_auto_gen dcm_de
+bug
+ARGV: new, act: codegen_vre_modis
+ARGV: new, act: mtegen
+ARGV: new, act: at_modis
+ARGV: new, act: ap_modis
+ARGV: new, act: ap_uesim
+ARGV: new, act: c,r_modis
+ARGV: new, act: c,u_modis
+ARGV: new, act: c,r_uesim
+ARGV: new, act: c,u_uesim
+ARGV: new, act: remake_modis
+ARGV: new, act: clean_modis
+ARGV: new, act: update_modis
+ARGV: new, act: remake_uesim
+ARGV: new, act: clean_uesim
+ARGV: new, act: update_uesim
+ARGV: new, act: codegen_modis
+ARGV: new, act: clean_codegen_modis
+ARGV: new, act: codegen_uesim
+ARGV: new, act: clean_codegen_uesim
+ARGV: new, act: gen_modis
+ARGV: new, act: gen_uesim
+ARGV: new, act: new_modis
+ARGV: new, act: sys_mem_gen_modis
+ARGV: new, act: new_uesim
+ARGV: new, act: sys_mem_gen_uesim
+ARGV: new, act: getusr
+ARGV: new, act: new
+action: new
+aciton else
+arguments: , ARGV:
+final action: new, #ARGV: -1
+action is not rel and ckcr
+action is not removecode
+action is not bm_new|bm_update|bm_remake
+local_q: 0, local_p:
+cwd: D:\MTK2503\SDK
+cwd: ckeck directory is ok
+delCmd: del /Q, makeFolder: make\
+custom: ULTRA2503A_11C
+ENV{'MTK_INTERNAL'}:
+mbis_en: FALSE
+ENV{MBIS_BUILD_TIME_TMP}: tmp
+m_in_lsf: 0
+package:
+prj_file: make\ULTRA2503A_11C_gprs.mak
+get package: REL_CR_MMI_
+package: REL_CR_MMI_
+tools_Dirs: tools\ tools\MinGW tools\MSYS
+tools_file: tools\make.exe, ENV{'MTK_INTERNAL'}:
+XGConsole not found
+notify_list: tools\BM_conf.ini
+notify_list: if else
+exec_xgc_result is not 0
+ENV{"NUMBER_OF_PROCESSORS"}:4
+exec_xgc_result: 99
+don't to check license number
+fullOpts:
+fullOpts: CMD_ARGU=-j4
+mbis_num_proc 0
+fullOpts: CMD_ARGU=-j4
+temp: , mOpts:
+fullOpts: CMD_ARGU=-j4
+fullOpts: CMD_ARGU=-j4
+makeCmd tools\make.exe
+exec_buildconsole: `BuildConsole  2>&1`
+
+BuildConsole not found
+m_in_lsf: 0
+plat:
+plat:  is empty
+custom: ULTRA2503A_11C
+theMF: make\ULTRA2503A_11C_gprs.mak
+enFile: make\ULTRA2503A_11C_gprs_en.def
+disFile: make\ULTRA2503A_11C_gprs_dis.def
+theVerno: make\Verno_ULTRA2503A_11C.bld
+flavorMF:
+copy /y make\ULTRA2503A_11C_gprs.mak make\
+verno: MAUI.11C.W13.52.SP3.V3
+hw_ver: ULTRA2503A_11C_HW
+build: BUILD_NO
+branch: 11CW1352SP3
+verno: MAUI.11C.W13.52.SP3.V3
+demo_project: FALSE
+flaver: NONE
+empty_resource: TRUE
+langln_engine:
+j2me_support: NONE
+wifi_support: MT5931
+action: new, flavor: NONE, board_ver: ULTRA2503A_11C_BB
+mmi_version: PLUTO_MMI
+LICENSE_FILE: , ARM_COMPILER:
+ENV{'MTK_INTERNAL'}:
+ENV{COMPUTERNAME}: APLEXOS
+bypassMoDIS: 0
+bypassMoDIS: 0
+run_flavor_conf: 0
+check_dep: 0
+m_in_lsf: 0, not_enter_lsf
+action: new, demo_project: FALSE
+tools\make.exe  -fmake\gsm2.mak -r -R CUSTOMER=ULTRA2503A_11C PROJECT=gprs ck3rdptylic
+Skip 3rd party feature license check for custom release projects!!!
+action: new, check position
+action: new
+theAct: new
+newMoDIS: 0
+newUESim: 0
+exec_xgc_result: 99
+action: new
+mbis_en: FALSE
+len: 14, folder_limit: 90
+theAct: new
+action: new
+empty here to run through BT switch
+tools\make.exe  -fmake\gsm2.mak -r -R CUSTOMER=ULTRA2503A_11C PROJECT=gprs  ckmake
+perl tools\chk_verno.pl MAUI.11C.W13.52.SP3.V3
+perl tools\chk_env.pl make ULTRA2503A_11C_gprs.mak -customer ULTRA2503A_11C
+*******************************************
+ Start checking MTK build environment......
+*******************************************
+OS is Windows 2000 or XP. => [OK]
+Compiler in makefile is RVCT!
+RVCT VERSION in makefile is correct!
+ARMCC version is RVCT3.1 [OK] , Build number is 569 [OK] .
+TCC version is RVCT3.1 [OK] , Build number is 569 [OK] .
+ARMLINK version is RVCT3.1 [OK] , Build number is 569 [OK] .
+FROMELF version is RVCT3.1 [OK] , Build number is 569 [OK] .
+ARMAR version is RVCT3.1 [OK] , Build number is 1021 [OK] .
+C:\Program Files\ARM\ADSv1_2\licenses\license.dat is not existed!
+Perl version is 5.008008 . => [OK]
+Shell is cmd.exe. => [OK]
+Excel version is 2000 or above. => [OK]
+*******************************************
+      MTK build environment is ready!
+*******************************************
+makefile check is done
+make ckmake action###########################zengjf################################
+tools\make.exe  -fmake\gsm2.mak -r -R CUSTOMER=ULTRA2503A_11C PROJECT=gprs  new
+Processing makefile_list.log
+Cleaning directories under .\build\ULTRA2503A_11C\gprs ...
+D:\MTK2503\SDK\build\ULTRA2503A_11C\log\ckSysDrv.log
+拒绝访问。
+Cleaning directories under .\build\ULTRA2503A_11C\gprs\MT6261r
+Cleaning object files under nvram
+Cleaning object files under l4misc
+Cleaning object files under fs
+Cleaning object files under init
+Cleaning object files under config
+Cleaning object files under custom
+Cleaning object files under bmt
+Cleaning object files under ft
+Cleaning object files under ftc
+Cleaning object files under cct
+Cleaning object files under audio
+Cleaning object files under l1_ext
+Cleaning object files under conn_app
+Cleaning object files under inet_app
+Cleaning object files under media_app
+Cleaning object files under mmi_app
+Cleaning object files under mmi_framework
+Cleaning object files under mmi_service
+Cleaning object files under gdi
+Cleaning object files under gdi_arm
+Cleaning object files under mmiresource
+Cleaning object files under vendorapp
+Cleaning object files under usb
+Cleaning object files under xmlp
+Cleaning object files under verno
+Cleaning object files under mtd
+Cleaning object files under system
+Cleaning object files under gfx_drv
+Cleaning object files under peripheral
+Cleaning object files under usb_driver
+Cleaning object files under sim_driver
+Cleaning object files under gps
+Cleaning object files under media
+Cleaning object files under video
+Cleaning object files under mpl
+Cleaning object files under video_codec
+Cleaning object files under video_sec
+Cleaning object files under fluency
+Cleaning object files under provider
+Cleaning object files under fmt
+Cleaning object files under obigo03cadp
+Cleaning object files under obigo03cfwadp
+Cleaning object files under obigo03cstkadp
+Cleaning object files under matv
+Cleaning object files under drm
+Cleaning object files under fm_drv
+Cleaning object files under obigo03cmmsadp
+Cleaning object files under obigo03cfwadp
+Cleaning object files under mre_custom
+Cleaning object files under mre_engine
+Cleaning object files under mmi_core
+Cleaning object files under fmr
+Cleaning object files under obigo03cpushadp
+Cleaning object files under applib
+Cleaning object files under applib_asn1
+Cleaning object files under guobihw
+Cleaning object files under drv_display
+Cleaning object files under drv_idp
+Cleaning object files under drv
+Cleaning object files under mc
+Cleaning object files under btdrv_common
+Cleaning object files under cstar
+Cleaning object files under winguo
+Cleaning object files under mm_comm
+Cleaning object files under camera
+Cleaning object files under postproc
+Cleaning object files under ntpd
+Cleaning object files under tencentmcarev31adp
+Cleaning lib files under .\build\ULTRA2503A_11C\gprs\MT6261o\lib
+.\custom\drv\Drv_Tool\DrvGen.exe custom\codegen\ULTRA2503A_11C_BB\codegen.dws .\build\ULTRA2503A_11C\log 2>&1 & \
+                (if ERRORLEVEL 1 (echo DrvGen.exe Error. Please check .\build\ULTRA2503A_11C\log\DrvGen.log & exit 1))
+MMI_features_switch.h is from .\plutommi\Customer\CustResource\ULTRA2503A_11C_MMI\MMI_features_switchULTRA2503A_11C.h
+Processing gencustominfo.log
+
+start MMI feature check...
+get feature list from MMI_features.h...
+get feature list from MMI_features_switch.h...
+generate feature check file...
+validate features...
+build\log\mmi_feature_compile.log
+check def/undef features for MMI_features.h...
+generate feature check file...
+validate features...
+check def/undef features for MMI_features_switch.h...
+log generated at .\build\ULTRA2503A_11C\log\MMI_features.log
+
+[MMI_features.h, MMI_features_switch.h]
+All feature count = 1860
+Defined count = 246
+Undef count = 1614
+
+[MMI_features_switch.h]
+Mismatch Config count = 14
+
+MMI Feature Check - Done
+
+start MMI feature check...
+get feature list from drv_features.h...
+get feature list from drv_features_option.h...
+generate feature check file...
+validate features...
+check def/undef features for drv_features.h...
+log generated at .\build\ULTRA2503A_11C\log\drv_features_option.log
+
+[drv_features.h, drv_features_option.h]
+All feature count = 1187
+Defined count = 361
+Undef count = 826
+
+[drv_features_option.h]
+Mismatch Config count = 0
+
+MMI Feature Check - Done
+Generate EMI settings
+Processing emigen.log
+perl .\tools\emiMCPcheck.pl MT6261 GPRS .\custom\system\ULTRA2503A_11C_BB
+.\build\ULTRA2503A_11C\log\mcp_check.log
+Processing mcp_check.log
+Processing obj_list_gen.log
+Processing sysgen.log
+[Dependency] D:\MTK2503\SDK\.\tools\ckScatter.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\ckScatter.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\ckScatter.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+UNKNOWN PATTERN : {
+UNKNOWN PATTERN : {
+2018/06/05 18:36:47
+Generate config information
+genmoduleinfo is done.
+Generating .lis and .def files are done
+2018/06/05 18:36:50
+[Dependency] D:\MTK2503\SDK\tools\sys_mem_gen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\tools\sys_mem_gen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+Processing sys_mem_gen.d sys_mem_gen.log
+clean codegen list
+Processing
+Processing resgen_public_1.lis resgen_public_2.lis resgen_public_3.lis resgen_public_4.lis
+plutommi\Customer\ResGenerator_XML.bat PLUTO_MMI ULTRA2503A_11C B C IMEv1
+------------ ResGenerator_XML.bat Parameter Resolving----------------
+PARAM: B
+PARAM: C
+PARAM: IMEv1
+---------------------------------------------------------------------
+----------------------------------------------------------------
+MediaTek Inc. Resource Generator Script
+Building resource for ULTRA2503A_11C...
+IME Version=[1]
+NUMBER_OF_PROCESSORS=[4] COMPILE_NUM=[8]
+--------------Copying Base file form PLUTO_MMI-----------------
+------------------------------DONE------------------------------
+-------------Copying Project file form Project folder-------------
+------------------------------DONE------------------------------
+-----------------generate resgen include path----------------
+系统找不到指定的路径。
+另一个程序正在使用此文件，进程无法访问。
+另一个程序正在使用此文件，进程无法访问。
+另一个程序正在使用此文件，进程无法访问。
+-----------------make and run resgen_xml.exe----------------
+-----------------make resgen_xml.exe----------------
+make[1]: Entering directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_audio.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_event.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_hash.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_image.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_screen.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_mem_config.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_menu.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_string.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_theme.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_timer.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_xml.c
+Compiling ./ResgenXML/ResgenSrc/mmi_rp_xml_parser.c
+Compiling ./ResgenXML/CustResSrc/mmi_rp_callback_mgr.c
+Compiling ./ResgenXML/CustResSrc/mmi_rp_cust_template.c
+Compiling ./ResgenXML/CustResSrc/mmi_rp_mmi_cache.cCompiling ./ResgenXML/CustResSrc/mmi_rp_file_type.c
+
+Compiling ./ResgenXML/CustResSrc/mmi_rp_third_rom.c
+Compiling ./ResgenXML/CustResSrc/mmi_rp_venus_xml.c
+Linking *.o for resgen_xml.exe...
+make[1]: Leaving directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+-----------------copy *.res----------------
+output resource_base_table.txt done.
+找不到文件 - *.res
+找不到文件 - *.res
+找不到文件 - *.res
+找不到文件 - *.res
+-----------------mmi_res_check--------------------
+
+[mmi_res_check.pl] start ...
+
+找不到文件
+系统找不到指定的文件。
+找不到文件
+找不到文件
+1 can't open .\build\ULTRA2503A_11C\xml\macro
+找不到文件
+找不到文件
+".\hal\drv_def\drv_features_6261.h", line 86: Warning:  #1-D: last line of file ends without a newline
+
+   ^
+1 can't open .\build\ULTRA2503A_11C\xml\macro
+
+[mmi_res_check.pl] end (execution time: 2 sec., see mmi_res_check.log for detail)
+-----------------venus_app_icon_cfg_generator.pl--------------------
+[makeopt] Build options ...
+[makeopt] Collect options count: 670
+[prexml] Read option count: 670
+-----------------pre-process *.res----------------
+make[1]: Entering directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+Preprocessing temp/res/000_FileMgr.c
+Preprocessing temp/res/000_editor.c
+Preprocessing temp/res/3DMainMenuRes.c
+Preprocessing temp/res/A2dpSrv.c
+Preprocessing temp/res/AM.c
+Preprocessing temp/res/AM_int.c
+Preprocessing temp/res/Alarm.c
+Preprocessing temp/res/AVBT.c
+Preprocessing temp/res/AlarmSrv.c
+Preprocessing temp/res/ApnControl.c
+Preprocessing temp/res/AppList.c
+Preprocessing temp/res/AppListBarrel.c
+Preprocessing temp/res/AppSetting.c
+Preprocessing temp/res/AppMgrSrv.c
+Preprocessing temp/res/AudioPlayer.c
+Preprocessing temp/res/Appicon.c
+Preprocessing temp/res/AudioPlayerBT.c
+Preprocessing temp/res/AudioPlayerWalk.c
+Preprocessing temp/res/AvrcpSrv.c
+Preprocessing temp/res/BGSound.c
+Preprocessing temp/res/AzaanAlarm.c
+Preprocessing temp/res/BTBox_Categories.c
+Preprocessing temp/res/BTdialer.c
+Preprocessing temp/res/BackupRestoreSrv.c
+Preprocessing temp/res/Bluetooth.c
+Preprocessing temp/res/BookmarkCui.c
+Preprocessing temp/res/Bootup.c
+Preprocessing temp/res/BootupSrv.c
+Preprocessing temp/res/BrowserSrv.c
+Preprocessing temp/res/BthScoPathSrv.c
+Preprocessing temp/res/BtcmSrv.c
+Preprocessing temp/res/Calculator.c
+Preprocessing temp/res/CallLogSrv.c
+Preprocessing temp/res/CallLog.c
+Preprocessing temp/res/CallSetSrv.c
+Preprocessing temp/res/CallSet.c
+Preprocessing temp/res/Camcorder.c
+Preprocessing temp/res/CameraRes.c
+Preprocessing temp/res/CbmSrv.c
+Preprocessing temp/res/CameraCui.c
+Preprocessing temp/res/Cbm.c
+Preprocessing temp/res/CbsApp.c
+Preprocessing temp/res/CbsSrv.c
+Preprocessing temp/res/CcaSrv.c
+Preprocessing temp/res/CertificateManager.c
+Preprocessing temp/res/ChargerApp.c
+Preprocessing temp/res/ChargerSrv.c
+Preprocessing temp/res/Charset.c
+Preprocessing temp/res/CnmgrSrv.c
+Preprocessing temp/res/ConnectManage.c
+Preprocessing temp/res/ConnectivityMainmenu.c
+Preprocessing temp/res/CphsSrv.c
+Preprocessing temp/res/Ctm.c
+Preprocessing temp/res/CtmSrv.c
+Preprocessing temp/res/DCD.c
+Preprocessing temp/res/CustomerService.c
+Preprocessing temp/res/DCDV30.c
+Preprocessing temp/res/DM_SR.c
+Preprocessing temp/res/DTVPlayer.c
+Preprocessing temp/res/DataLockSrv.c
+Preprocessing temp/res/DLS.c
+Preprocessing temp/res/DataService.c
+Preprocessing temp/res/Dataaccount.c
+Preprocessing temp/res/DateTime.c
+Preprocessing temp/res/DialerCui.c
+Preprocessing temp/res/Dialer.c
+Preprocessing temp/res/Dict.c
+Preprocessing temp/res/Dialer_Pad.c
+Preprocessing temp/res/DmSrv.c
+Preprocessing temp/res/DownloadAgentApp.c
+Preprocessing temp/res/DownloadCalData.c
+Preprocessing temp/res/DownloadAgentSrv.c
+Preprocessing temp/res/DtcntSrv.c
+Preprocessing temp/res/Ebook.c
+Preprocessing temp/res/Ecompass.c
+Preprocessing temp/res/Ecompass_Country_city.c
+Preprocessing temp/res/EngineerMode.c
+Preprocessing temp/res/EngineerModeMultimedia.c
+Preprocessing temp/res/FMRadio.c
+Preprocessing temp/res/FSEditorCui.c
+Preprocessing temp/res/FactoryMode.c
+Preprocessing temp/res/FileMgrSrv.c
+Preprocessing temp/res/FanAndGame.c
+Preprocessing temp/res/FileTypes.c
+Preprocessing temp/res/FontEffects.c
+Preprocessing temp/res/FlightMode.c
+Preprocessing temp/res/GCallSrv.c
+Preprocessing temp/res/FontManager.c
+Preprocessing temp/res/GDI_Timer.c
+Preprocessing temp/res/GDI_Mem.c
+Preprocessing temp/res/GPSRes.c
+Preprocessing temp/res/Game.c
+Preprocessing temp/res/Gui.c
+Preprocessing temp/res/GeneralSettingSrv.c
+Preprocessing temp/res/HijriCalendar.c
+Preprocessing temp/res/IG3DGame.c
+Preprocessing temp/res/Idle.c
+Preprocessing temp/res/IdleHomescreen.c
+Preprocessing temp/res/IdleNotificationManager.c
+Preprocessing temp/res/ImageClipCui.c
+Preprocessing temp/res/ImageFlow.c
+Preprocessing temp/res/IndianCalendar.c
+Preprocessing temp/res/InlineCui.c
+Preprocessing temp/res/Java.c
+Preprocessing temp/res/Lunarquery.c
+Preprocessing temp/res/MDI.c
+Preprocessing temp/res/MDI_Mem.c
+Preprocessing temp/res/MMIThemes.c
+Preprocessing temp/res/MMSApp.c
+Preprocessing temp/res/MMSSrv.c
+Preprocessing temp/res/MREAppMgrSrv.c
+Preprocessing temp/res/MSpace.c
+Preprocessing temp/res/MainMenuRes.c
+Preprocessing temp/res/MediaPlayer.c
+Preprocessing temp/res/MediaWall.c
+Preprocessing temp/res/MediaSinglePlayer.c
+Preprocessing temp/res/MenuEffect.c
+Preprocessing temp/res/MobileVideo.c
+Preprocessing temp/res/MobileTVPlayer.c
+Preprocessing temp/res/ModeSwitchSrv.c
+Preprocessing temp/res/MobileService.c
+Preprocessing temp/res/ModeSwitch.c
+Preprocessing temp/res/MotionSensor.c
+Preprocessing temp/res/MyFavorite.c
+Preprocessing temp/res/NFC.c
+Preprocessing temp/res/NITZ.c
+Preprocessing temp/res/NSSApp.c
+Preprocessing temp/res/NITZSrv.c
+Preprocessing temp/res/NetSetApp.c
+Preprocessing temp/res/NetSetSrv.c
+Preprocessing temp/res/Note.c
+Preprocessing temp/res/NotificationSettingSrv.c
+Preprocessing temp/res/NtpApp.c
+Preprocessing temp/res/NtpSrv.c
+Preprocessing temp/res/NwInfo.c
+Preprocessing temp/res/NwInfoSrv.c
+Preprocessing temp/res/NwNameSrv.c
+Preprocessing temp/res/Organizer.c
+Preprocessing temp/res/OP11_HS32.c
+Preprocessing temp/res/PasswordCui.c
+Preprocessing temp/res/PenCalibrationSrv.c
+Preprocessing temp/res/PhbSrv.c
+Preprocessing temp/res/PhnsetGpio.c
+Preprocessing temp/res/PhoneSetting.c
+Preprocessing temp/res/PhotoEditor.c
+Preprocessing temp/res/Picker.c
+Preprocessing temp/res/Plstsrv.c
+Preprocessing temp/res/PnSrv.c
+Preprocessing temp/res/Profiles.c
+Preprocessing temp/res/PowerOnOffDisplay.c
+Preprocessing temp/res/ProfilesSrv.c
+Preprocessing temp/res/PushSwitch.c
+Preprocessing temp/res/PushSwitchSrv.c
+Preprocessing temp/res/RNGC.c
+Preprocessing temp/res/Reminder.c
+Preprocessing temp/res/ReminderSrv.c
+Preprocessing temp/res/RestoreSrv.c
+Preprocessing temp/res/SSOAPP.c
+Preprocessing temp/res/SafeModeSrv.c
+Preprocessing temp/res/Sat.c
+Preprocessing temp/res/SatApp.c
+Preprocessing temp/res/SchedulePowerOnOff.c
+Preprocessing temp/res/ScrLocker.c
+Preprocessing temp/res/ScreenLockKeyImageSetting.c
+Preprocessing temp/res/SearchWeb.c
+Preprocessing temp/res/ScreenRotation.c
+Preprocessing temp/res/ScreenSaver.c
+Preprocessing temp/res/SecSet.c
+Preprocessing temp/res/SecSetCui.c
+Preprocessing temp/res/SecSetSrv.c
+Preprocessing temp/res/Service.c
+Preprocessing temp/res/ShellImageViewer.cPreprocessing temp/res/SensorSrv.c
+Preprocessing temp/res/ShutdownSrv.c
+Preprocessing temp/res/Shutdown.c
+Preprocessing temp/res/SimCtrl.c
+Preprocessing temp/res/SimCtrlSrv.c
+Preprocessing temp/res/SimSelCui.c
+Preprocessing temp/res/SimSpace.c
+Preprocessing temp/res/SmlMenu.c
+Preprocessing temp/res/SmsAppRes.c
+Preprocessing temp/res/SmsSrv.c
+Preprocessing temp/res/SmsUmBT.c
+Preprocessing temp/res/SnsSrv.c
+Preprocessing temp/res/Sndrec.c
+Preprocessing temp/res/SoundEffect.c
+Preprocessing temp/res/SoundRecSrv.c
+Preprocessing temp/res/Ss.c
+Preprocessing temp/res/SsoCui.c
+Preprocessing temp/res/SsSrv.c
+Preprocessing temp/res/SsoSrv.c
+Preprocessing temp/res/Status_icon_bar.c
+Preprocessing temp/res/SyncML.c
+Preprocessing temp/res/SyncMLDevice.c
+Preprocessing temp/res/TTSSetting.c
+Preprocessing temp/res/TetheringApp.c
+Preprocessing temp/res/TetheringSrv.c
+Preprocessing temp/res/TodolistSrv.c
+Preprocessing temp/res/ToneSelectorCui.c
+Preprocessing temp/res/USBMMI.c
+Preprocessing temp/res/UPPSrv.c
+Preprocessing temp/res/UcmSrv.c
+Preprocessing temp/res/UcmCore.c
+Preprocessing temp/res/Udx.c
+Preprocessing temp/res/UmSrv.c
+Preprocessing temp/res/UnifiedMessage.c
+Preprocessing temp/res/UseDetailCui.c
+Preprocessing temp/res/VDORecRes.c
+Preprocessing temp/res/UsbSrv.c
+Preprocessing temp/res/VdoplyappRes.c
+Preprocessing temp/res/VenusTheme.c
+Preprocessing temp/res/ViewSetting.c
+Preprocessing temp/res/Wallpaper.cPreprocessing temp/res/WAPProfile.c
+
+Preprocessing temp/res/WapPushSrv.c
+Preprocessing temp/res/WgtMgrSrv.c
+Preprocessing temp/res/Zakat.c
+Preprocessing temp/res/WorldClock.c
+Preprocessing temp/res/alert.c
+Preprocessing temp/res/alipay.c
+Preprocessing temp/res/app_appmgr_test_2.c
+Preprocessing temp/res/app_appmgr_test_1.c
+Preprocessing temp/res/app_appmgr_test_3.c
+Preprocessing temp/res/app_appmgr_test_4.c
+Preprocessing temp/res/app_gb_winguo.c
+Preprocessing temp/res/app_gb_winguo_net.c
+Preprocessing temp/res/app_package_concurrent.c
+Preprocessing temp/res/avk_cui_menu.c
+Preprocessing temp/res/avk_fw_graphic.c
+Preprocessing temp/res/avk_multimedia.c
+Preprocessing temp/res/avk_pluto_mem.c
+Preprocessing temp/res/avk_sdk_test.c
+Preprocessing temp/res/avk_pluto_res.c
+Preprocessing temp/res/calendar.c
+Preprocessing temp/res/bmi.c
+Preprocessing temp/res/calibration.c
+Preprocessing temp/res/callback_mgr.c
+Preprocessing temp/res/csbrowser.c
+Preprocessing temp/res/devapp.c
+Preprocessing temp/res/currencyconvertor.c
+Preprocessing temp/res/extra.c
+Preprocessing temp/res/editor.c
+Preprocessing temp/res/global.c
+Preprocessing temp/res/framework_asm.c
+Preprocessing temp/res/gpiosrv.c
+Preprocessing temp/res/health.c
+Preprocessing temp/res/healthmenstrual.c
+Preprocessing temp/res/imageview.c
+Preprocessing temp/res/imgview.c
+Preprocessing temp/res/imgviewcui.c
+Preprocessing temp/res/input_method.c
+Preprocessing temp/res/mcare.c
+Preprocessing temp/res/mre.c
+Preprocessing temp/res/mre_bg.c
+Preprocessing temp/res/nmgr.c
+Preprocessing temp/res/nmc.c
+Preprocessing temp/res/opera_adp.c
+Preprocessing temp/res/nvram_mgr.c
+Preprocessing temp/res/pictbridge.c
+Preprocessing temp/res/phonebook.c
+Preprocessing temp/res/plstslimsrv.c
+Preprocessing temp/res/restore.c
+Preprocessing temp/res/shellAppBase.c
+Preprocessing temp/res/shortcuts.c
+Preprocessing temp/res/shellAppScrlock.c
+Preprocessing temp/res/slideshow.c
+Preprocessing temp/res/stopwatch.c
+Preprocessing temp/res/ucm.c
+Preprocessing temp/res/ucmbt.c
+Preprocessing temp/res/todolist.c
+Preprocessing temp/res/unitconvertor.c
+Preprocessing temp/res/vBookmark.c
+Preprocessing temp/res/vObjects.c
+Preprocessing temp/res/vCard.c
+Preprocessing temp/res/vCalendar.c
+Preprocessing temp/res/vapp_hs.c
+Preprocessing temp/res/vapp_hs_widget_audplayer.c
+Preprocessing temp/res/vapp_hs_widget_bookmark.c
+Preprocessing temp/res/vapp_hs_widget_baidu.c
+Preprocessing temp/res/vapp_hs_widget_calendar.c
+Preprocessing temp/res/vapp_hs_widget_clock.c
+Preprocessing temp/res/vapp_hs_widget_date.c
+Preprocessing temp/res/vapp_hs_widget_fmradio.c
+Preprocessing temp/res/vapp_hs_widget_event_inbox.c
+Preprocessing temp/res/vapp_hs_widget_next_alarm.c
+Preprocessing temp/res/vapp_hs_widget_memo.c
+Preprocessing temp/res/vapp_hs_widget_mre.c
+Preprocessing temp/res/vapp_hs_widget_op02.c
+Preprocessing temp/res/vapp_hs_widget_operator_name.c
+Preprocessing temp/res/vapp_hs_widget_pet.c
+Preprocessing temp/res/vapp_hs_widget_photo.c
+Preprocessing temp/res/vapp_hs_widget_profile.c
+Preprocessing temp/res/vapp_hs_widget_todo.c
+Preprocessing temp/res/vapp_hs_widget_snow.c
+Preprocessing temp/res/vapp_multi_touch_test.c
+Preprocessing temp/res/vapp_notepaper.c
+Preprocessing temp/res/vapp_shell_fc.c
+Preprocessing temp/res/vapp_shell_msg_viewer.c
+Preprocessing temp/res/vapp_shell_mediaplayer.c
+Preprocessing temp/res/vapp_shell_recent_calls.c
+Preprocessing temp/res/vapp_shell_settings.c
+Preprocessing temp/res/vapp_video_player_cp.c
+Preprocessing temp/res/vapp_sns.c
+Preprocessing temp/res/vapp_widget_google_search.c
+Preprocessing temp/res/vapp_widget_sns.c
+Preprocessing temp/res/vcp_normal_mode_menu.c
+Preprocessing temp/res/vapp_widget_sns_dummy_app.c
+Preprocessing temp/res/vcui_sns.c
+Preprocessing temp/res/vcp_page_menu_transition.c
+Preprocessing temp/res/version.c
+Preprocessing temp/res/video_call.c
+Preprocessing temp/res/virtual_keyboard_misc.c
+Preprocessing temp/res/webcam.c
+make[1]: Leaving directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+-----------------parse *.res----------------
+-----------------finalizing...--------------------
+-----------------ResGenerator_XML Complete!!-----------------
+Processing resgen_xml_copy.log resgen_xml_make.log resgen_xml_parse.log resgen_xml_preprocess.log resgen_xml_tool.log
+Processing common.dep xml_parser.dep
+Processing xml_parser_1.d xml_parser_2.d
+Platform is: MSWin32
+genindex = 189   tarindex = 192
+
+ warning: genindex != tarindex !!!!
+Buid spend time:  0 S
+[NVRAM Auto Gen]
+已复制         1 个文件。
+    [mmi_cache_gen]
+    [nvram_auto_gen]
+    [fs_quota_entry_dump]
+--
+Complete!!
+Processing adc_nvram_def.d audio_nvram_def.d camera_nvram_def.d custom_nvram_cat.d custom_nvram_sec.d fs_quota.d fs_quot
+a_entry_dump.d mmi_gps_nvram_def.d nvram_auto_gen.d nvram_common_config.d nvram_cust_pack.d nvram_data_items.d nvram_fac
+tory_config.d nvram_gen_mmi_cache.d nvram_gen_util.d nvram_user_config.d touchpanel_nvram_def.d ul1_nvram_def.d userprof
+ile_nvram_def.d
+2018/06/05 18:39:11
+Generate applib information
+Generate applib_asn1 information
+Generate audio information
+Generate bmt information
+Generate btdrv_common information
+Generate camera information
+Generate cct information
+Generate config information
+Generate conn_app information
+Generate cstar information
+Generate custom information
+Generate drm information
+Generate drv information
+Generate drv_display information
+Generate drv_idp information
+Generate fluency information
+Generate fm_drv information
+Generate fmr information
+Generate fmt information
+Generate fs information
+Generate ft information
+Generate ftc information
+Generate gdi information
+Generate gdi_arm information
+Generate gfx_drv information
+Generate gps information
+Generate guobihw information
+Generate inet_app information
+Generate init information
+Generate l1_ext information
+Generate l4misc information
+Generate matv information
+Generate mc information
+Generate media information
+Generate media_app information
+Generate mm_comm information
+Generate mmi_app information
+Generate mmi_core information
+Generate mmi_framework information
+Generate mmi_service information
+Generate mmiresource information
+Generate mpl information
+Generate mre_custom information
+Generate mre_engine information
+Generate mtd information
+Generate ntpd information
+Generate nvram information
+Generate obigo03cadp information
+Generate obigo03cfwadp information
+Generate obigo03cmmsadp information
+Generate obigo03cpushadp information
+Generate obigo03cstkadp information
+Generate peripheral information
+Generate postproc information
+Generate provider information
+Generate sim_driver information
+Generate tencentmcarev31adp information
+Generate system information
+Generate usb information
+Generate usb_driver information
+Generate vendorapp information
+Generate verno information
+Generate video_codec information
+Generate video information
+Generate video_sec information
+Generate winguo information
+Generate xmlp information
+Generate bootloader information
+Generate bootloader_ext information
+genmoduleinfo is done.
+Generating .lis and .def files are done
+2018/06/05 18:39:57
+Start to collection application trace info...
+No need to update .\plutommi\mmi\inc\\MMI_common_app_trc.h
+No need to update .\plutommi\mmi\inc\\MMI_inet_app_trc.h
+No need to update .\plutommi\mmi\inc\\MMI_media_app_trc.h
+No need to update .\plutommi\mmi\inc\\MMI_conn_app_trc.h
+Trace collection is finished.
+Parse mmi_res_range_def.h
+Find file list in each folder
+Search each .res file
+Output screen_enum.h
+No need to update screen_enum.h
+Processing cgen_parse.log
+Check Directories ...
+Preprocessing .\tst\database\msglog_db\custom_parse_db.c ...
+Processing custom_pri.d
+Preprocessing codegen_single.h
+Processing codegen_single.d
+Generate PS Trace Information ...
+Preprocessing log2SD_Catcher_filters.h ...
+Cgen -cfg .\tst\database_classb\cgen.cfg
+Cgen -cm:
+Check DB result: 0
+Examine DB result: 0
+Start Parsing: 18:40:11
+Phase 1: 18:40:11
+Modify size of union union_gename_19 from 20 to 24
+Modify size of union union_gename_19 from 36 to 40
+Phase 2: 18:40:11
+Phase 3: 18:40:11
+Phase 4: 18:40:11
+Start Parsing: 18:40:11
+Phase 1: 18:40:12
+Modify size of union union_gename_19 from 20 to 24
+Modify size of union union_gename_19 from 36 to 40
+Phase 2: 18:40:12
+Phase 3: 18:40:12
+Phase 4: 18:40:12
+Reading custom_data succeeded.
+Start to parse the custom NVRAM DATA!
+NVRAM ID:NVRAM_EF_A2DP_SETTINGS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_ADC_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_ALM_ALARM_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_ALM_SPOF_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_ALS_LINE_ID_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_AUDIO_BESLOUDNESS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_AUDIO_PARAM_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_AUTOTEST_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BAND_INFO_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BARCODE_NUM_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BTHF_CONFIG_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BTRADIO_MTK_BT_CHIP_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BT_DEV_LIST_INDEX_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BT_DEV_LIST_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BT_INFO_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BT_SYS_INFO_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_BWCS_SETTING_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CACHE_BYTE_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CACHE_DOUBLE_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CACHE_SHORT_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CAL_DATA_CHECK_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CAL_FLAG_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CAMERA_SETTING_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CB_CH_INFO_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CB_DEFAULT_CH_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CFU_FLAG_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CLASSMARK_RACAP_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CLOG_CALL_TIME_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CLOG_LOG_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CNMGR_CONNECT_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CSM_ESSP_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CUST_ACOUSTIC_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_CUST_HW_LEVEL_TBL_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_EM_NW_EVENT_RINGS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_FM_RADIO_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_GPS_MMI_SETTING_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_GPS_SETTING_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_GROUPLIST_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_GROUPLIST_SIM2_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_IMEI_IMEISV_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_INET_CUSTPACK_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_AFCDATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_AGCPATHLOSS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_CLOAD_FREQ_OFFSET_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_CRYSTAL_AFCDATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_CRYSTAL_CAPDATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_GMSK_TX_POWER_ROLLBACK_TABLE_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_INTERSLOT_RAMP_DCS1800_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_INTERSLOT_RAMP_GSM850_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_INTERSLOT_RAMP_GSM900_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_INTERSLOT_RAMP_PCS1900_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_RAMPTABLE_DCS1800_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_RAMPTABLE_GSM850_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_RAMPTABLE_GSM900_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_RAMPTABLE_PCS1900_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_RFSPECIALCOEF_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_L1_TXIQ_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_MM_EQPLMN_LOCIGPRS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_MSCAP_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_MS_SECURITY_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_NET_PAR_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_NITZ_NW_NAME_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_PHB_FIELDS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_PHB_INFO_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_PHB_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_PHB_MY_NUMBER_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_PHB_SOS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_PORT_SETTING_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_PS_CONFORMANCE_TESTMODE_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_QUICKTEST_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_RAC_PREFERENCE_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SHORTCUTS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SIM_ASSERT_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SMSAL_COMMON_PARAM_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SMSAL_MAILBOX_ADDR_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SMSAL_MWIS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SMSAL_SMSP_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SRV_PROF_EXT_MELODY_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SRV_PROF_SETTING_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SRV_SMS_PDU_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SRV_SMS_STATUS_REPORT_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SYS_CACHE_OCTET_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SYS_EXCEPTION_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_SYS_STATISTICS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_TCM_PDP_PROFILE_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_TCM_STATISTICS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_TOUCHPANEL_PARA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_TST_CONFIG_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_TST_FILTER_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_UEM_MANUFACTURE_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_UEM_RMI_DATA_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_VIDEO_SETTING_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WALLPAPER_FILENAME_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WNDRV_ALC_SLOPE_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WNDRV_DAC_DC_OFFSET_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WNDRV_EXT_SETTING_TRIMVAL_THERMOVAL_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WNDRV_MAC_ADDRESS_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WNDRV_TPCFF_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WNDRV_TX_ALC_POWER_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WNDRV_TX_POWER_2400M_LID in original Database is replaced!
+NVRAM ID:NVRAM_EF_WNDRV_TX_POWER_5000M_LID in original Database is replaced!
+Creating file ".\tst\database_classb\enumFileCustomAppSrc".
+Create file ".\tst\database_classb\enumFileCustomAppSrc" successfully.
+Cgen -ps:
+Parsing file ".\tst\database_classb\pstrace_db/codegen_single.ptr".
+MOD_NVRAM trace is replaced with the new file.
+MOD_L4C trace is replaced with the new file.
+Warning: enum type FDD_HSDPA_CATEGORY_E is not in database
+Warning: enum type FDD_HSUPA_CATEGORY_E is not in database
+Warning: enum type kbd_event is not in database
+Warning: enum type UART_PORT is not in database
+Warning: enum type hz_sim_status_enum is not in database
+Warning: enum type UART_PORT is not in database
+MOD_PHB trace is replaced with the new file.
+Warning: enum type data_desc_enum is not in database
+MOD_UEM trace is replaced with the new file.
+MOD_FS trace is replaced with the new file.
+Warning: enum type EntryType is not in database
+Warning: enum type rtf_search_ret_enum is not in database
+Warning: enum type MountStates is not in database
+Warning: enum type MountStates is not in database
+MOD_SYSTEM trace is replaced with the new file.
+Warning: enum type demp_lock_user is not in database
+Warning: enum type demp_lock_user is not in database
+Warning: enum type demp_lock_user is not in database
+Warning: enum type demp_lock_user is not in database
+MOD_MRE trace is replaced with the new file.
+MOD_MMI_COMMON_APP trace is replaced with the new file.
+Warning: enum type mmi_op11_hs32_sidebar_id_enum is not in database
+Warning: enum type mmi_op11_hs32_sidebar_id_enum is not in database
+Warning: enum type mmi_op11_hs32_sidebar_id_enum is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type srv_sim_ctrl_event_detection_enum is not in database
+Warning: enum type srv_sim_ctrl_change_check_enum is not in database
+Warning: enum type srv_sim_ctrl_op_enum is not in database
+Warning: enum type srv_gcall_sim_interface_enum is not in database
+Warning: enum type srv_ucm_autoam_state is not in database
+Warning: enum type srv_ucm_autoam_state is not in database
+Warning: enum type cui_sns_filter_enum is not in database
+Warning: enum type cui_sns_sender_enum is not in database
+Warning: enum type cui_sns_editor_enum is not in database
+Warning: enum type cui_sns_editor_enum is not in database
+Warning: enum type cui_sns_sender_enum is not in database
+Warning: enum type ums_process_type_enum is not in database
+Warning: enum type ums_process_type_enum is not in database
+Warning: enum type ums_process_status_enum is not in database
+Warning: enum type ums_process_type_enum is not in database
+Warning: enum type ums_process_status_enum is not in database
+Warning: enum type ums_process_type_enum is not in database
+Warning: enum type ums_process_status_enum is not in database
+MOD_PLUTO_FW trace is replaced with the new file.
+Warning: enum type MMINVRAMERRORSENUM is not in database
+Warning: enum type MMINVRAMERRORSENUM is not in database
+Warning: enum type MMINVRAMERRORSENUM is not in database
+Warning: enum type DATASIZE is not in database
+Warning: enum type mmi_rp_fw_nvram_mgr_mmi_cache_enum is not in database
+Warning: enum type MMINVRAMERRORSENUM is not in database
+Warning: enum type DATASIZE is not in database
+Warning: enum type mmi_rp_fw_nvram_mgr_mmi_cache_enum is not in database
+Warning: enum type MMINVRAMERRORSENUM is not in database
+Warning: enum type DATASIZE is not in database
+Warning: enum type DATASIZE is not in database
+Warning: enum type circularQ_check_enum is not in database
+Warning: enum type L4_keypad_mode_enum is not in database
+Warning: enum type kbd_event is not in database
+Warning: enum type  is not in database
+Warning: enum type mmi_hist_smallscreen_state_enum is not in database
+MOD_MMI_INET_APP trace is replaced with the new file.
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type mmi_email_emn_account_item_status is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_prot_type_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type mmi_email_bpp_field_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type mmi_chset_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type email_stor_msg_edit_type is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type email_stor_msg_edit_state_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type email_comp_type_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+MOD_MMI_CONN_APP trace is replaced with the new file.
+Warning: enum type mmi_da_storage_enum is not in database
+Warning: enum type srv_bootup_event_enum is not in database
+Warning: enum type srv_dm_init_flag_enum is not in database
+Warning: enum type srv_dm_init_status_enum is not in database
+Warning: enum type srv_dm_app_adp_evt_enum is not in database
+Warning: enum type srv_dm_app_adp_evt_enum is not in database
+Warning: enum type srv_sim_ctrl_event_detection_enum is not in database
+Warning: enum type srv_nw_info_service_availability_enum is not in database
+Warning: enum type srv_dm_app_adp_evt_enum is not in database
+Warning: enum type srv_dm_session_status_enum is not in database
+Warning: enum type dm_ui_mode_enum is not in database
+Warning: enum type dm_ui_interaction_enum is not in database
+Warning: enum type dm_ui_interaction_enum is not in database
+Warning: enum type srv_dm_session_status_enum is not in database
+Warning: enum type dm_ps_status_enum is not in database
+Warning: enum type srv_dm_app_adp_session_ending_msg_enum is not in database
+Warning: enum type dm_alert_type_enum is not in database
+Warning: enum type dm_ui_interaction_enum is not in database
+Warning: enum type srv_dm_dl_status_enum is not in database
+Warning: enum type dm_ui_interaction_enum is not in database
+Warning: enum type dm_dl_status_enum is not in database
+Warning: enum type dm_dl_status_enum is not in database
+Warning: enum type srv_dm_fota_status_enum is not in database
+Warning: enum type dm_ui_interaction_enum is not in database
+Warning: enum type srv_mode_state_enum is not in database
+Warning: enum type srv_cca_status_enum is not in database
+Warning: enum type srv_cca_status_enum is not in database
+Warning: enum type srv_cca_status_enum is not in database
+Warning: enum type srv_cca_status_enum is not in database
+Warning: enum type mmi_rp_srv_dtcnt_event_enum is not in database
+Warning: enum type srv_dm_lawmo_lock_cmd_enum is not in database
+Warning: enum type srv_dm_lawmo_wipe_cmd_enum is not in database
+Warning: enum type srv_dm_lawmo_lock_cmd_enum is not in database
+Warning: enum type srv_dm_lawmo_wipe_cmd_enum is not in database
+Warning: enum type srv_dm_mo_type_enum is not in database
+Warning: enum type srv_dm_status_enum is not in database
+Warning: enum type srv_dm_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_cmd_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_cmd_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_cmd_enum is not in database
+Warning: enum type mmi_dmui_result_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_app_id_enum is not in database
+Warning: enum type mmi_dmui_cmd_enum is not in database
+Warning: enum type mmi_dmui_result_enum is not in database
+Warning: enum type mmi_dmui_cmd_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type mmi_dmui_status_enum is not in database
+Warning: enum type mmi_dmui_mo_type_enum is not in database
+Warning: enum type srv_tethering_status_enum is not in database
+Warning: enum type srv_tethering_status_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_status_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_ext_status_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_ext_status_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_status_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_mode_switch_state_enum is not in database
+Warning: enum type srv_mode_switch_state_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_status_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_disconn_cause_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_launch_result_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_launch_result_enum is not in database
+Warning: enum type srv_tethering_launch_result_enum is not in database
+Warning: enum type srv_tethering_type_enum is not in database
+Warning: enum type srv_tethering_launch_result_enum is not in database
+Warning: enum type srv_tethering_wifi_power_change_type_enum is not in database
+Warning: enum type srv_tethering_wifi_power_change_type_enum is not in database
+Warning: enum type srv_email_nwk_status_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_email_result_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+Warning: enum type srv_cloud_op_enum is not in database
+Warning: enum type srv_cloud_sms_op_state_enum is not in database
+MOD_MMI_MEDIA_APP trace is replaced with the new file.
+Warning: enum type mmi_camco_state_enum is not in database
+Warning: enum type mmi_camco_state_enum is not in database
+Warning: enum type mmi_camco_state_enum is not in database
+Warning: enum type mmi_camco_state_enum is not in database
+Warning: enum type mmi_camco_state_enum is not in database
+Warning: enum type mmi_camco_state_enum is not in database
+Warning: enum type mmi_camco_state_enum is not in database
+Warning: enum type mmi_camco_state_enum is not in database
+Warning: enum type mdi_audio_drm_consume_rule_enum is not in database
+Warning: enum type mdi_audio_drm_consume_rule_enum is not in database
+Warning: enum type APPLICATION_DEPLOY is not in database
+Warning: enum type APPLICATION_DEPLOY is not in database
+Warning: enum type mmi_dtv_player_kernel_state_enum is not in database
+Warning: enum type mmi_dtv_player_kernel_state_enum is not in database
+Warning: enum type mmi_dtv_player_player_state_enum is not in database
+Warning: enum type mmi_dtv_player_player_state_enum is not in database
+Warning: enum type mmi_dtv_player_recorder_state_enum is not in database
+Warning: enum type mmi_dtv_player_recorder_state_enum is not in database
+Warning: enum type mmi_dtv_player_player_state_enum is not in database
+Warning: enum type dtv_ca_state_enum is not in database
+Warning: enum type dtv_player_service_event_enum is not in database
+Warning: enum type dtv_player_bool_status_enum is not in database
+Warning: enum type dtv_player_bool_status_enum is not in database
+Warning: enum type dtv_player_bool_status_enum is not in database
+Warning: enum type dtv_player_bool_status_enum is not in database
+Warning: enum type mmi_mtv_player_kernel_state_enum is not in database
+Warning: enum type mmi_mtv_player_kernel_state_enum is not in database
+Warning: enum type mmi_mtv_player_player_state_enum is not in database
+Warning: enum type mmi_mtv_player_player_state_enum is not in database
+Warning: enum type mmi_mtv_player_recorder_state_enum is not in database
+Warning: enum type mmi_mtv_player_recorder_state_enum is not in database
+Warning: enum type mmi_mtv_player_player_state_enum is not in database
+Warning: enum type mtv_ca_state_enum is not in database
+MOD_MMI_FW trace is replaced with the new file.
+Warning: enum type mmi_frm_event_table_enum is not in database
+Warning: enum type mmi_frm_event_table_enum is not in database
+Warning: enum type mmi_frm_event_table_enum is not in database
+Warning: enum type mmi_frm_event_table_enum is not in database
+Warning: enum type mmi_frm_event_table_enum is not in database
+Warning: enum type mmi_frm_device_type_emun is not in database
+Warning: enum type kbd_event is not in database
+Warning: enum type mmi_timer_type_enum is not in database
+Warning: enum type mmi_timer_type_enum is not in database
+Warning: enum type mmi_frm_asm_manager_state_enum is not in database
+Warning: enum type STRINGID_LIST_COMMON_SCREENS is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type mmi_ut_error_code_enum is not in database
+Warning: enum type mmi_frm_strokes_enum is not in database
+Warning: enum type mmi_frm_gesture_event_enum is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type  is not in database
+Warning: enum type mmi_nmgr_balloon_type_enum is not in database
+Warning: enum type ALL_TONE_ENUM is not in database
+Warning: enum type mmi_nmgr_behavior_enum is not in database
+Warning: enum type mmi_nmgr_behavior_enum is not in database
+Warning: enum type mmi_nmgr_behavior_enum is not in database
+Warning: enum type mmi_nmgr_behavior_enum is not in database
+Warning: enum type mmi_noti_attr_beha_enum is not in database
+Warning: enum type mmi_noti_attr_beha_enum is not in database
+Warning: enum type mmi_noti_attr_beha_enum is not in database
+Warning: enum type mmi_noti_attr_beha_enum is not in database
+Warning: enum type mi_scen_attr_prio_enum is not in database
+Warning: enum type mmi_frm_proc_id_enum is not in database
+MOD_BMT trace is replaced with the new file.
+MOD_L1SP trace is replaced with the new file.
+MOD_L1AUDIO_SPH_SRV trace is replaced with the new file.
+MOD_MED trace is replaced with the new file.
+Warning: enum type mtv_debug_event_t is not in database
+Warning: enum type mtv_debug_event_t is not in database
+Warning: enum type mtv_debug_event_t is not in database
+Warning: enum type CL_Status is not in database
+Warning: enum type mtv_freq_band_t is not in database
+Warning: enum type cmmb_sp_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type cmmb_sp_mca_state_t is not in database
+Warning: enum type mtv_spi_event_t is not in database
+Warning: enum type dab_application_type_t is not in database
+Warning: enum type mtv_stream_type_t is not in database
+Warning: enum type mtv_stream_type_t is not in database
+Warning: enum type mtv_buffer_engine_read_state_t is not in database
+MOD_MMI trace is replaced with the new file.
+MOD_GDI trace is replaced with the new file.
+MOD_NMS trace is replaced with the new file.
+MOD_FMT trace is replaced with the new file.
+MOD_USB trace is replaced with the new file.
+MOD_TP_TASK trace is replaced with the new file.
+MOD_DRVKBD trace is replaced with the new file.
+MOD_RTC_HISR trace is replaced with the new file.
+MOD_MSDC_HISR trace is replaced with the new file.
+MOD_DCL_COMMON trace is replaced with the new file.
+MOD_PPP_HW trace is replaced with the new file.
+MOD_EC_TASK trace is replaced with the new file.
+MOD_DRV_HISR trace is replaced with the new file.
+MOD_AUX trace is replaced with the new file.
+MOD_DRV_IDP trace is replaced with the new file.
+MOD_DRV_LCD trace is replaced with the new file.
+MOD_CAL trace is replaced with the new file.
+Warning: enum type CAL_TRACE_FLOW_ENUM is not in database
+Warning: enum type CAL_TRACE_FLOW_ENUM is not in database
+Warning: enum type CAL_TRACE_FLOW_ENUM is not in database
+Warning: enum type CAL_MATV_FEATURE_ENUM is not in database
+Warning: enum type CAL_VT_FEATURE_ENUM is not in database
+Warning: enum type CAL_TRACE_FLOW_ENUM is not in database
+Warning: enum type CAL_TRACE_FLOW_ENUM is not in database
+Warning: enum type CAL_STATE_ENUM is not in database
+MOD_SIM trace is replaced with the new file.
+Warning: enum type sim_plug_out_type_enum is not in database
+Warning: enum type sim_instruction_code_enum is not in database
+Warning: enum type usim_channel_op_enum is not in database
+Warning: enum type usim_logic_channel_enum is not in database
+Warning: enum type usim_sfi_enum is not in database
+Warning: enum type sim_sync_poll_timer_state_enum is not in database
+Warning: enum type sim_instruction_code_enum is not in database
+Warning: enum type usim_instruction_code_enum is not in database
+MOD_GPS trace is replaced with the new file.
+MOD_VIDEO trace is replaced with the new file.
+Warning: enum type VIDEO_MPEG4HW_USER_T is not in database
+Warning: enum type VIDEO_MPEG4HW_USER_T is not in database
+Warning: enum type OPEN_API_PARAM_TYPE_T is not in database
+Warning: enum type OPEN_API_PARAM_TYPE_T is not in database
+Warning: enum type VFC_RENDERER_PROCESS_TYPE_T is not in database
+Warning: enum type VCODEC_FRAME_TYPE_T is not in database
+Warning: enum type VCODEC_DETECT_T is not in database
+Warning: enum type VCODEC_SCENE_T is not in database
+Warning: enum type VIDEO_RECORDER_ROTATION_ANGLE_T is not in database
+Warning: enum type CUSTOM_VENC_USER_T is not in database
+Warning: enum type CUSTOM_VENC_USER_T is not in database
+Warning: enum type CUSTOM_VENC_OP_T is not in database
+Warning: enum type CUSTOM_VENC_OP_T is not in database
+Warning: enum type MP4SwEncRet is not in database
+Warning: enum type MP4SwEncStreamSliceType is not in database
+Warning: enum type MP4SwEncVopType is not in database
+Warning: enum type AVI_SP_FETCH_SIZE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_STATE_T is not in database
+Warning: enum type MPLVR_VIDEO_STATE_T is not in database
+Warning: enum type MPLVR_VIDEO_STATE_T is not in database
+Warning: enum type MPLVR_VIDEO_STATE_T is not in database
+Warning: enum type MPLVR_VIDEO_STATE_T is not in database
+Warning: enum type MPLVR_VIDEO_STATE_T is not in database
+Warning: enum type MPLVR_VIDEO_STATE_T is not in database
+Warning: enum type MPLVR_VIDEO_STATE_T is not in database
+Warning: enum type MPLVR_VIDEO_STATE_T is not in database
+Warning: enum type MPLVR_MUXER_STATE_T is not in database
+Warning: enum type MPLVR_MUXER_STATE_T is not in database
+Warning: enum type MPLVR_MUXER_STATE_T is not in database
+Warning: enum type MPLVR_MUXER_STATE_T is not in database
+Warning: enum type MPLVR_AUDIO_STATE_T is not in database
+Warning: enum type MPLVR_AUDIO_STATE_T is not in database
+Warning: enum type MPLVR_AUDIO_STATE_T is not in database
+Warning: enum type MPLVR_AUDIO_STATE_T is not in database
+Warning: enum type MPLVR_AUDIO_STATE_T is not in database
+Warning: enum type MPLVR_AUDIO_STATE_T is not in database
+Warning: enum type MPLVR_AUDIO_STATE_T is not in database
+Warning: enum type VSD_ACTION_T is not in database
+Warning: enum type VSD_MESSAGE_T is not in database
+Warning: enum type VSD_LUMP_STATUS_T is not in database
+MOD_VFILE trace is replaced with the new file.
+MOD_WAP trace is replaced with the new file.
+MOD_FMR trace is replaced with the new file.
+MOD_MRE_APP_INFO trace is replaced with the new file.
+MOD_WPS trace is replaced with the new file.
+1 trace definition files parsed
+Generating definition file ".\tst\database_classb\pstrace_db\ps_trace_1.h".
+[PSTrc] Find the duplicated item. ERROR_NVRAM_STATE
+[PSTrc] Find the duplicated item. INFO_RECV_EXT_Q
+[PSTrc] Find the duplicated item. ERROR_NONSUPPORT_MSG
+[PSTrc] Find the duplicated item. H264DEC_INIT
+[PSTrc] Find the duplicated item. H264DEC_DEINIT
+[PSTrc] Find the duplicated item. H264DEC_OPEN
+[PSTrc] Find the duplicated item. H264DEC_CLOSE
+[PSTrc] Find the duplicated item. H264DEC_INIT_ERROR
+[PSTrc] Find the duplicated item. H264DEC_DECODE_RESULT
+[PSTrc] Find the duplicated item. H264DEC_DECODE_ERROR
+[PSTrc] Find the duplicated item. H264DEC_ARGUMENT_ERROR
+[PSTrc] Find the duplicated item. H264DEC_SUPPORT_ERROR
+[PSTrc] Find the duplicated item. H264DEC_DECODING_CONCEAL
+[PSTrc] Find the duplicated item. H264DEC_DISPLAY_INFO
+[PSTrc] Find the duplicated item. H264DEC_CROP_INFO
+[PSTrc] Find the duplicated item. H264DEC_BITSTREAM_INFO
+[PSTrc] Find the duplicated item. H264DEC_PAYLOAD_INFO
+[PSTrc] Find the duplicated item. H264DEC_CHANGE_SPS
+[PSTrc] Find the duplicated item. H264DEC_ABNORMAL_NALU_SIZE
+[PSTrc] Find the duplicated item. H264DEC_HEADER_ERROR
+[PSTrc] Find the duplicated item. H264DEC_OUTPUT_IDR
+[PSTrc] Find the duplicated item. H264DEC_ALIGN_ERROR
+[PSTrc] Find the duplicated item. H264DEC_ALLOCATE_ERROR
+[PSTrc] Find the duplicated item. RADIOMGR_RADIO_INIT_FAILED_RETRYING
+Generating ".\tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_S00_MAUI_11C_W13_52_SP3_V3".
+Check .\tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_S00_MAUI_11C_W13_52_SP3_V3
+Check DB result: 0
+Write DB result: 0
+Create file ".\tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_S00_MAUI_11C_W13_52_SP3_V3" successfully.
+Cgen -rle:
+Starting reading from .\tst\database_classb\pstrace_db\ps_trace_1.h
+There are 45879 traces.
+There are 292 different kinds of traces.
+.\tst\database_classb\pstrace_db\ps_trace_2.h is created.
+Cgen -sps:
+Cgen -filter_gen:
+Can't find LAST_SAP_CODE in the database.
+Starting reading from .\tst\database\log2SD_Catcher_filters.ini
+[Info] Below classes are skipped. They don't exist in the L1 module "L1C_GSM".
+L1T_SDCCH_DL , L1T_SACCH_DL , L1T_FACCH_DL
+[Info] L1 module "L1C_GSM_2" is skipped. It doesn't exist in the database.
+[Info] Below classes are skipped. They don't exist in the L1 module "L1D_SEC".
+L1D_DSP_FILTER , L1D_DSP_FILTER_L
+[Info] Below classes are skipped. They don't exist in the L1 module "L1I_GSM".
+AGCPM , AGCPM_L
+[Info] Below classes are skipped. They don't exist in the L1 module "L1D_PRI".
+SleepMode , FMCalibration
+[Info] "SM_LOCKER_L" is skipped. It doesn't exist in the L1 module "L1SM_1".
+[Info] Module "MOD_CMUX" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RMC" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRLP" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RSVAS" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SIBE" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SS" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SUPL" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SUPL_CONN" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_UPS_HIGH" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_AS_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_ATCI_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CISS_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CMUX" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CSM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L1_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L2R_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L4C_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LAPDM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LLC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MAC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MPAL_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RAC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATCM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATDM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_REASM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RLC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RMC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRLP_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SIM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMS_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMSAL_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMU_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SNDCP_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SS_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_TCM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_AS_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CISS_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CSM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L1_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L2R_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L4C_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LAPDM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LLC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MAC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MPAL_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RAC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATCM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATDM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_REASM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RLC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RMC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRLP_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SIM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMS_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMSAL_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMU_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SNDCP_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SS_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_TCM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_AS_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CISS_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CSM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L1_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L2R_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L4C_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LAPDM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LLC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MAC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MPAL_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RAC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATCM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATDM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_REASM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RLC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RMC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRLP_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SIM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMS_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMSAL_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMU_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SNDCP_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SS_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_TCM_4" is skipped. It doesn't exist in the database.
+"filter_gen" is finished.
+Cgen -filter_gen:
+Can't find LAST_SAP_CODE in the database.
+Starting reading from .\tst\database\log2SD_Catcher_filters.ini
+[Info] Below classes are skipped. They don't exist in the L1 module "L1C_GSM".
+L1T_SDCCH_DL , L1T_SACCH_DL , L1T_FACCH_DL
+[Info] L1 module "L1C_GSM_2" is skipped. It doesn't exist in the database.
+[Info] Below classes are skipped. They don't exist in the L1 module "L1D_SEC".
+L1D_DSP_FILTER , L1D_DSP_FILTER_L
+[Info] Below classes are skipped. They don't exist in the L1 module "L1I_GSM".
+AGCPM , AGCPM_L
+[Info] Below classes are skipped. They don't exist in the L1 module "L1D_PRI".
+SleepMode , FMCalibration
+[Info] "SM_LOCKER_L" is skipped. It doesn't exist in the L1 module "L1SM_1".
+[Info] Module "MOD_CMUX" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RMC" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRLP" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RSVAS" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SIBE" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SS" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SUPL" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SUPL_CONN" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_UPS_HIGH" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_AS_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_ATCI_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CISS_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CMUX" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CSM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L1_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L2R_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L4C_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LAPDM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LLC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MAC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MPAL_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RAC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATCM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATDM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_REASM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RLC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RMC_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRLP_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SIM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMS_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMSAL_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMU_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SNDCP_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SS_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_TCM_2" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_AS_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CISS_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CSM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L1_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L2R_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L4C_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LAPDM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LLC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MAC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MPAL_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RAC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATCM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATDM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_REASM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RLC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RMC_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRLP_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SIM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMS_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMSAL_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMU_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SNDCP_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SS_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_TCM_3" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_AS_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CISS_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_CSM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L1_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L2R_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_L4C_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LAPDM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_LLC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MAC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_MPAL_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RAC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATCM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RATDM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_REASM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RLC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RMC_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_RRLP_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SIM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SM_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMS_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMSAL_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SMU_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SNDCP_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_SS_4" is skipped. It doesn't exist in the database.
+[Info] Module "MOD_TCM_4" is skipped. It doesn't exist in the database.
+"filter_gen" is finished.
+CGen time spent : 8003 milliseconds.
+ps_trace.h is updated
+Processing cgen_cfg.det cgen_cm.det cgen_filter_gen.det cgen_parse.det cgen_preflow.det cgen_ps.det codegen_single.det c
+ustom_pri.det log2SD_Catcher_filters.det
+Processing custom_pri.det
+Processing
+plutommi\Customer\ResGenerator_HW.bat PLUTO_MMI ULTRA2503A_11C IMEv1 --NO_FREETYPE
+---------- ResGenerator_HW.bat Parameter Resolving ------------------
+PARAM: IMEv1
+PARAM: --NO_FREETYPE
+---------------------------------------------------------------------
+VK Version=[1]
+NUMBER_OF_PROCESSORS=[4] COMPILE_NUM=[8]
+-------------- Copy default cust resource files ------------
+copy default resouce output files
+-----------------DONE-----------------
+-----------------Font Resgen Start-----------------
+-----------------make font_gen.exe----------------
+make[1]: Entering directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+Compiling ../FontResgen/bdf_operation.cpp
+Compiling ../FontResgen/res_gen_font.cpp
+Compiling ../FontResgen/FontClass.cpp
+Compiling ../FontResgen/Fontgen.cpp
+Compiling ../FontResgen/FontResFile.cpp
+Compiling ../FontResgen/FontHWCompress.cpp
+Linking debug/obj/font_gen/res_gen_font.o
+make[1]: Leaving directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+-----------------Font Resgen Done-----------------
+-----------------make and run ref_list_merge.exe-----------------
+-----------------make ref_list_merge.exe----------------
+make[1]: Entering directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+Compiling ref_list_merge.c
+Linking debug/obj/ref_list_merge/ref_list_merge.o
+make[1]: Leaving directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+-----------------run ref_list_merge.exe----------------
+-----------------DONE-----------------
+-----------------make and run plmncreate.exe-----------------
+-----------------make plmncreate.exe----------------
+make[1]: Entering directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+Compiling plmncreate.c
+Linking debug/obj/plmncreate/plmncreate.o
+make[1]: Leaving directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+-----------------run plmncreate.exe----------------
+-----------------DONE-----------------
+-----------------make mtk_resgenerator.exe----------------
+make[1]: Entering directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+Compiling mtk_resgenerator.cpp
+Compiling str_merge.c
+Compiling ../CustResource/FontRes.c
+Compiling ../CustResource/FontData.c
+Compiling CustResDeclare.c
+Compiling ../../MMI/Resource/PopulateRes.c
+Compiling ../../MMI/Resource/WriteRes.c
+Compiling ../../MMI/Resource/WriteImgRes.c
+Compiling ../../MMI/Resource/WriteResUtil.c
+Compiling ../../MMI/Resource/WriteProcess.cpp
+Compiling ../../MMI/Resource/ResBytestream.c
+Compiling ../../MMI/Resource/BMPLoader.c
+Compiling ../../MMI/Resource/ABMLoader.c
+Compiling ../../MMI/Resource/bmp2ems.c
+Compiling ../../MMI/Resource/GIFLoader.c
+Compiling ../../MMI/Resource/ImageGetDimension.c
+Compiling ../../MMI/Resource/ThreadPool.cpp
+Compiling ../../MMI/Resource/CmidiGen.c
+Compiling ../Res_MMI/res_Alarm.c
+Compiling ../Res_MMI/res_Calendar.c
+Compiling ../Res_MMI/res_CallManagement.c
+Compiling ../Res_MMI/res_CommonScreens.c
+Compiling ../Res_MMI/res_Connectivity.c
+Compiling ../Res_MMI/res_FileMgrService.c
+Compiling ../Res_MMI/res_Font.c
+Compiling ../Res_MMI/res_FunAndGames.c
+Compiling ../Res_MMI/res_IdleScreen.c
+Compiling ../Res_MMI/res_MiscFramework.c
+Compiling ../Res_MMI/res_IdleFancyHandsetLock.c
+Compiling ../Res_MMI/res_NITZHandler.c
+Compiling ../Res_MMI/res_MyFavorite.c
+Compiling ../Res_MMI/res_NetSetApp.c
+Compiling ../Res_MMI/res_Opera.c
+Compiling ../Res_MMI/res_Opera_v11.c
+Compiling ../Res_MMI/res_Organizer.c
+Compiling ../Res_MMI/res_PhoneBook.c
+Compiling ../Res_MMI/res_PhoneSetting.c
+Compiling ../Res_MMI/res_PictureEditor.c
+Compiling ../Res_MMI/res_PoC.c
+Compiling ../Res_MMI/res_SAT.c
+Compiling ../Res_MMI/res_Setting.c
+Compiling ../Res_MMI/res_SSC.c
+Compiling ../Res_MMI/res_SoftwareTracer.c
+Compiling ../Res_MMI/res_Theme.c
+Compiling ../Res_MMI/res_ToDoList.c
+Compiling ../Res_MMI/res_Srv_Ucm.c
+Compiling ../Res_MMI/res_VF_HS.c
+Compiling ../Res_MMI/res_VRSD.c
+Compiling ../Res_MMI/res_Vcp.c
+Compiling ../Res_MMI/res_Vdoeditor.c
+Compiling ../Res_MMI/res_Video.c
+Compiling ../Res_MMI/res_VoiceMemo.c
+Compiling ../Res_MMI/res_Wap.c
+Compiling ../Res_MMI/res_mmiapi.c
+Compiling ../Res_MMI/res_progress.c
+Compiling ../Res_MMI/res_vObjects.c
+Compiling ./zlib/adler32.c
+Compiling ./zlib/compress.c
+Compiling ./zlib/deflate.c
+Compiling ./zlib/crc32.cCompiling ./zlib/gzio.c
+
+Compiling ./zlib/infback.c
+Compiling ./zlib/inffast.c
+Compiling ./zlib/trees.cCompiling ./zlib/inftrees.c
+
+Compiling ./zlib/inflate.c
+Compiling ./zlib/zutil.c
+Compiling ./zlib/uncompr.c
+Compiling ../Res_MMI_XML/mmi_rp_app_audioplayer.cCompiling ../Res_MMI_XML/mmi_rp_app_alarm.c
+
+Compiling ../Res_MMI_XML/mmi_rp_app_bluetooth.c
+Compiling ../Res_MMI_XML/mmi_rp_app_calculator.c
+Compiling ../Res_MMI_XML/mmi_rp_app_calendar.c
+Compiling ../Res_MMI_XML/mmi_rp_app_calllog.c
+Compiling ../Res_MMI_XML/mmi_rp_app_callset.c
+Compiling ../Res_MMI_XML/mmi_rp_app_dataaccount.c
+Compiling ../Res_MMI_XML/mmi_rp_app_camera.c
+Compiling ../Res_MMI_XML/mmi_rp_app_connectivity_mainmenu.c
+Compiling ../Res_MMI_XML/mmi_rp_app_downloadagent.c
+Compiling ../Res_MMI_XML/mmi_rp_app_engineermode1.c
+Compiling ../Res_MMI_XML/mmi_rp_app_factorymode.c
+Compiling ../Res_MMI_XML/mmi_rp_app_filemanager.c
+Compiling ../Res_MMI_XML/mmi_rp_app_gb_winguo_net.c
+Compiling ../Res_MMI_XML/mmi_rp_app_fmrdo.c
+Compiling ../Res_MMI_XML/mmi_rp_app_imageviewer.c
+Compiling ../Res_MMI_XML/mmi_rp_app_gpio.c
+Compiling ../Res_MMI_XML/mmi_rp_app_netset.c
+Compiling ../Res_MMI_XML/mmi_rp_app_mainmenu.c
+Compiling ../Res_MMI_XML/mmi_rp_app_nitz.c
+Compiling ../Res_MMI_XML/mmi_rp_app_nss.c
+Compiling ../Res_MMI_XML/mmi_rp_app_ntp.c
+Compiling ../Res_MMI_XML/mmi_rp_app_organizer.c
+Compiling ../Res_MMI_XML/mmi_rp_app_phonebook.c
+Compiling ../Res_MMI_XML/mmi_rp_app_phonesetting_new.c
+Compiling ../Res_MMI_XML/mmi_rp_app_profiles.c
+Compiling ../Res_MMI_XML/mmi_rp_app_sat.c
+Compiling ../Res_MMI_XML/mmi_rp_app_restore.c
+Compiling ../Res_MMI_XML/mmi_rp_app_scr_locker.c
+Compiling ../Res_MMI_XML/mmi_rp_app_security_setting.c
+Compiling ../Res_MMI_XML/mmi_rp_app_shortcuts.c
+Compiling ../Res_MMI_XML/mmi_rp_app_ss.c
+Compiling ../Res_MMI_XML/mmi_rp_app_sms.c
+Compiling ../Res_MMI_XML/mmi_rp_app_soundrecorder.c
+Compiling ../Res_MMI_XML/mmi_rp_app_tencent_mcare.c
+Compiling ../Res_MMI_XML/mmi_rp_app_ucm.c
+Compiling ../Res_MMI_XML/mmi_rp_app_ucmbt.c
+Compiling ../Res_MMI_XML/mmi_rp_app_unifiedmessage.c
+Compiling ../Res_MMI_XML/mmi_rp_app_umms_mms.c
+Compiling ../Res_MMI_XML/mmi_rp_app_vdoply.c
+Compiling ../Res_MMI_XML/mmi_rp_app_vdorec.c
+Compiling ../Res_MMI_XML/mmi_rp_app_worldclock.c
+Compiling ../Res_MMI_XML/mmi_rp_cui_dialer.c
+Compiling ../Res_MMI_XML/mmi_rp_populate.c
+Compiling ../Res_MMI_XML/mmi_rp_cui_use_detail.c
+Compiling ../Res_MMI_XML/mmi_rp_srv_editor.c
+Compiling ../Res_MMI_XML/mmi_rp_srv_flight_mode.c
+Compiling ../Res_MMI_XML/mmi_rp_srv_gps.c
+Compiling ../Res_MMI_XML/mmi_rp_srv_mms.c
+Compiling ../Res_MMI_XML/mmi_rp_srv_wallpaper.c
+Compiling ../Res_MMI_XML/mmi_rp_srv_vobject.c
+Linking *.o for mtk_resgenerator.exe...
+Finish Linking *.o for mtk_resgenerator.exe...
+make[1]: Leaving directory `/d/MTK2503/SDK/plutommi/Customer/ResGenerator'
+-----------------run mtk_resgenerator.exe----------------
+MAINLCD's image.zip is not changed, skip Unzip process...
+Start Unzip images ...output 3rd_tool.log
+AUDIO's audio.zip is not changed, skip Unzip process...
+Start Unzip audios ...output 3rd_tool.log
+Resource ID range check old_last_menu=[1562], res_first=[3000] res_last=[49617].
+Start copy unzip images use copy_images.bat output 3rd_tool.txt
+output vf_obj.txt done.
+output ttf_list.txt done.
+output vf_modis_obj.txt done.
+output resource_base_table.txt done.
+Populate Resource 0%
+Populate Resource 10%
+Populate Resource 20%
+Populate Resource 30%
+Populate Resource 40%
+Populate Resource 50%
+Populate Resource 60%
+Populate Resource 80%
+Populate Resource 90%
+output .\\debug\\menu_resource_usage.txt done.
+output .\\debug\\image_resource_usage.txt done.
+output .\\debug\\image_info_updated_all.txt done.
+output .\\debug\\audio_resource_usage.txt done.
+output .\\debug\\string_resource_usage.txt done.
+output vf_obj.txt done.
+output vf_modis_obj.txt done.
+output ttf_list.txt done.
+Populate Resource 100%
+Output CustENFBImgMap.c... done
+output language_usage.txt done.
+********start run generate_fixed_str1************
+********start run generate_fixed_str2************
+split file successfully!!
+mtk_resgenerator.exe execute successfully.
+-----------------freetype.exe is skipped-----------------
+-----------------clear intermediate files-----------------
+Output image_resource_usage.htm...done.
+-----------------run venus_theme_generator.bat----------------
+[ThemeGen] Load ..\CustResource\VenusSysThemeCFG.xml
+[ThemeGen] Load debug\venus_theme_log.txt
+[ThemeGen] Load debug\resgen_xml_all_enum_IDs.log
+[ThemeGen] Output ..\CustResource\CustVenusThemeId.h
+[ThemeGen] Read option FALSE
+[ThemeGen] System Theme generate completely
+-----------------ResGenerator_HW Complete!!-----------------
+Processing common.dep resgen.dep
+Processing resgen_font_make.log resgen_font_run.log
+Processing resgen_ref_list_make.log resgen_ref_list_run.log
+Processing resgen_misc_tool.log resgen_mtk_resgenerator_run.log
+Processing images_file_list.ini
+Processing audio_file_list.ini resgen_venus_theme_gen.log
+Processing resgen_mtk_1.d resgen_mtk_2.d resgen_mtk_3.d resgen_mtk_4.d
+Generate BOOTLOADER CMM file ...
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+Generate BOOTLOADER version number ...
+make[1]: Entering directory `D:/MTK2503/SDK'
+2018/06/06 08:14:24 Building bootloader
+                    LOG: .\build\ULTRA2503A_11C\log\bootloader.log
+                    Total 38 warnings found.
+make[1]: Leaving directory `D:/MTK2503/SDK'
+Linking ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3 ...
+2018/06/06 08:14:57
+make[1]: Entering directory `D:/MTK2503/SDK'
+2018/06/06 08:15:00 Building bootloader_ext
+                    LOG: .\build\ULTRA2503A_11C\log\bootloader_ext.log
+                    Total 78 warnings found.
+make[1]: Leaving directory `D:/MTK2503/SDK'
+Linking ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3_ext ...
+2018/06/06 08:15:54
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\scatFrame.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+make[1]: Entering directory `D:/MTK2503/SDK'
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\scatFrame.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+Result[5]: Calculating correct Bootloader value...Done.
+Do not need to adjust memory configuration and refer to .\build\ULTRA2503A_11C\log\BLReservedSize_AutoConfig.log
+
+copy .\build\ULTRA2503A_11C\log\auto_adjust_mem.log .\build\ULTRA2503A_11C\BOOTLOADER_DEBUG\auto_adjust_mem.log
+make[1]: Leaving directory `D:/MTK2503/SDK'
+C:\Progra~1\ARM\RVCT\Programs\3.1\569\win_32-pentium\fromelf.exe .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_M
+T6261_MAUI_11C_W13_52_SP3_V3.elf -bin -output .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_
+52_SP3_V3.bin
+Warning: Q3910W: Old syntax, please use '--bin'.
+Warning: Q3910W: Old syntax, please use '--output'.
+Finished: 0 information, 2 warning and 0 error messages.
+(@if /I "NONE" EQU "BIND_TO_CHIP"  .\tools\update_img.exe -blpath .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_
+MT6261_MAUI_11C_W13_52_SP3_V3.bin -keyini tools\sw_binding_key.ini) & \
+        (@if /I "NONE" EQU "BIND_TO_KEY"   .\tools\update_img.exe -blpath .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOAD
+ER_V005_MT6261_MAUI_11C_W13_52_SP3_V3.bin -keyini tools\sw_binding_key.ini) & \
+        @if not exist make\~gfh_cfg.tmp (tools\make.exe -fmake\gsm2.mak -r -R gen_gfh_cfg)
+C:\Progra~1\ARM\RVCT\Programs\3.1\569\win_32-pentium\fromelf.exe .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_M
+T6261_MAUI_11C_W13_52_SP3_V3_ext.elf -bin -output .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_
+W13_52_SP3_V3_ext.bin
+Warning: Q3910W: Old syntax, please use '--bin'.
+Warning: Q3910W: Old syntax, please use '--output'.
+Finished: 0 information, 2 warning and 0 error messages.
+已复制         1 个文件。
+cksysdrv was done.
+Clean applib.lib applib_asn1.lib audio.lib bmt.lib btdrv_common.lib camera.lib cct.lib config.lib conn_app.lib cstar.lib
+ custom.lib drm.lib drv.lib drv_display.lib drv_idp.lib fluency.lib fm_drv.lib fmr.lib fmt.lib fs.lib ft.lib ftc.lib gdi
+.lib gdi_arm.lib gfx_drv.lib gps.lib guobihw.lib inet_app.lib init.lib l1_ext.lib l4misc.lib matv.lib mc.lib media.lib m
+edia_app.lib mm_comm.lib mmi_app.lib mmi_core.lib mmi_framework.lib mmi_service.lib mmiresource.lib mpl.lib mre_custom.l
+ib mre_engine.lib mtd.lib ntpd.lib nvram.lib obigo03cadp.lib obigo03cfwadp.lib obigo03cmmsadp.lib obigo03cpushadp.lib ob
+igo03cstkadp.lib peripheral.lib postproc.lib provider.lib sim_driver.lib system.lib tencentmcarev31adp.lib usb.lib usb_d
+river.lib vendorapp.lib verno.lib video.lib video_codec.lib video_sec.lib winguo.lib xmlp.lib under .\build\ULTRA2503A_1
+1C\gprs\MT6261o\lib
+Start to build applib.lib applib_asn1.lib audio.lib bmt.lib btdrv_common.lib camera.lib cct.lib config.lib conn_app.lib
+cstar.lib custom.lib drm.lib drv.lib drv_display.lib drv_idp.lib fluency.lib fm_drv.lib fmr.lib fmt.lib fs.lib ft.lib ft
+c.lib gdi.lib gdi_arm.lib gfx_drv.lib gps.lib guobihw.lib inet_app.lib init.lib l1_ext.lib l4misc.lib matv.lib mc.lib me
+dia.lib media_app.lib mm_comm.lib mmi_app.lib mmi_core.lib mmi_framework.lib mmi_service.lib mmiresource.lib mpl.lib mre
+_custom.lib mre_engine.lib mtd.lib ntpd.lib nvram.lib obigo03cadp.lib obigo03cfwadp.lib obigo03cmmsadp.lib obigo03cpusha
+dp.lib obigo03cstkadp.lib peripheral.lib postproc.lib provider.lib sim_driver.lib system.lib tencentmcarev31adp.lib usb.
+lib usb_driver.lib vendorapp.lib verno.lib video.lib video_codec.lib video_sec.lib winguo.lib xmlp.lib
+Copying header files ......
+2018/06/06 08:16:07 Building applib
+                    LOG: .\build\ULTRA2503A_11C\log\applib.log
+                    Total 15 warnings found.
+2018/06/06 08:16:20 Building applib_asn1
+                    LOG: .\build\ULTRA2503A_11C\log\applib_asn1.log
+                    Total 0 warnings found.
+2018/06/06 08:16:25 Building audio
+                    LOG: .\build\ULTRA2503A_11C\log\audio.log
+                    Total 602 warnings found.
+2018/06/06 08:17:04 Building bmt
+                    LOG: .\build\ULTRA2503A_11C\log\bmt.log
+                    Total 3 warnings found.
+2018/06/06 08:17:12 Building btdrv_common
+                    LOG: .\build\ULTRA2503A_11C\log\btdrv_common.log
+                    Total 0 warnings found.
+2018/06/06 08:17:16 Building camera
+                    LOG: .\build\ULTRA2503A_11C\log\camera.log
+                    Total 1 warnings found.
+2018/06/06 08:17:30 Building cct
+                    LOG: .\build\ULTRA2503A_11C\log\cct.log
+                    Total 0 warnings found.
+2018/06/06 08:17:34 Building config
+                    LOG: .\build\ULTRA2503A_11C\log\config.log
+                    Total 0 warnings found.
+2018/06/06 08:17:40 Building conn_app
+                    LOG: .\build\ULTRA2503A_11C\log\conn_app.log
+                    Total 132 warnings found.
+2018/06/06 08:18:34 Building cstar
+                    LOG: .\build\ULTRA2503A_11C\log\cstar.log
+                    Total 8 warnings found.
+2018/06/06 08:18:39 Building custom
+                    LOG: .\build\ULTRA2503A_11C\log\custom.log
+                    Total 153 warnings found.
+2018/06/06 08:20:30 Building drm
+                    LOG: .\build\ULTRA2503A_11C\log\drm.log
+                    Total 3 warnings found.
+2018/06/06 08:20:37 Building drv
+                    LOG: .\build\ULTRA2503A_11C\log\drv.log
+                    Total 0 warnings found.
+2018/06/06 08:20:44 Building drv_display
+                    LOG: .\build\ULTRA2503A_11C\log\drv_display.log
+                    Total 4 warnings found.
+2018/06/06 08:20:57 Building drv_idp
+                    LOG: .\build\ULTRA2503A_11C\log\drv_idp.log
+                    Total 2 warnings found.
+2018/06/06 08:21:13 Building fluency
+                    LOG: .\build\ULTRA2503A_11C\log\fluency.log
+                    Total 1 warnings found.
+2018/06/06 08:21:18 Building fm_drv
+                    LOG: .\build\ULTRA2503A_11C\log\fm_drv.log
+                    Total 7 warnings found.
+2018/06/06 08:21:25 Building fmr
+                    LOG: .\build\ULTRA2503A_11C\log\fmr.log
+                    Total 2 warnings found.
+2018/06/06 08:21:31 Building fmt
+                    LOG: .\build\ULTRA2503A_11C\log\fmt.log
+                    Total 3 warnings found.
+2018/06/06 08:21:35 Building fs
+                    LOG: .\build\ULTRA2503A_11C\log\fs.log
+                    Total 0 warnings found.
+2018/06/06 08:21:48 Building ft
+                    LOG: .\build\ULTRA2503A_11C\log\ft.log
+                    Total 0 warnings found.
+2018/06/06 08:22:00 Building ftc
+                    LOG: .\build\ULTRA2503A_11C\log\ftc.log
+                    Total 0 warnings found.
+2018/06/06 08:22:04 Building gdi
+                    LOG: .\build\ULTRA2503A_11C\log\gdi.log
+                    Total 93 warnings found.
+2018/06/06 08:22:42 Building gdi_arm
+                    LOG: .\build\ULTRA2503A_11C\log\gdi_arm.log
+                    Total 3 warnings found.
+2018/06/06 08:22:53 Building gfx_drv
+                    LOG: .\build\ULTRA2503A_11C\log\gfx_drv.log
+                    Total 83 warnings found.
+2018/06/06 08:23:30 Building gps
+                    LOG: .\build\ULTRA2503A_11C\log\gps.log
+                    Total 6 warnings found.
+2018/06/06 08:23:37 Building guobihw
+                    LOG: .\build\ULTRA2503A_11C\log\guobihw.log
+                    Total 1 warnings found.
+2018/06/06 08:23:42 Building inet_app
+                    LOG: .\build\ULTRA2503A_11C\log\inet_app.log
+                    Total 25 warnings found.
+2018/06/06 08:24:06 Building init
+                    LOG: .\build\ULTRA2503A_11C\log\init.log
+                    Total 5 warnings found.
+2018/06/06 08:24:12 Building l1_ext
+                    LOG: .\build\ULTRA2503A_11C\log\l1_ext.log
+                    Total 0 warnings found.
+2018/06/06 08:24:18 Building l4misc
+                    LOG: .\build\ULTRA2503A_11C\log\l4misc.log
+                    Total 295 warnings found.
+2018/06/06 08:24:44 Building matv
+                    LOG: .\build\ULTRA2503A_11C\log\matv.log
+                    Total 0 warnings found.
+2018/06/06 08:24:48 Building mc
+                    LOG: .\build\ULTRA2503A_11C\log\mc.log
+                    Total 128 warnings found.
+2018/06/06 08:24:57 Building media
+                    LOG: .\build\ULTRA2503A_11C\log\media.log
+                    Total 88 warnings found.
+2018/06/06 08:25:36 Building media_app
+                    LOG: .\build\ULTRA2503A_11C\log\media_app.log
+                    Total 136 warnings found.
+2018/06/06 08:26:39 Building mm_comm
+                    LOG: .\build\ULTRA2503A_11C\log\mm_comm.log
+                    Total 1 warnings found.
+2018/06/06 08:26:46 Building mmi_app
+                    LOG: .\build\ULTRA2503A_11C\log\mmi_app.log
+                    Total 556 warnings found.
+2018/06/06 08:31:47 Building mmi_core
+                    LOG: .\build\ULTRA2503A_11C\log\mmi_core.log
+                    Total 0 warnings found.
+2018/06/06 08:31:53 Building mmi_framework
+                    LOG: .\build\ULTRA2503A_11C\log\mmi_framework.log
+                    Total 733 warnings found.
+2018/06/06 08:34:58 Building mmi_service
+                    LOG: .\build\ULTRA2503A_11C\log\mmi_service.log
+                    Total 407 warnings found.
+2018/06/06 08:38:31 Building mmiresource
+                    LOG: .\build\ULTRA2503A_11C\log\mmiresource.log
+                    Total 24 warnings found.
+2018/06/06 08:39:22 Building mpl
+                    LOG: .\build\ULTRA2503A_11C\log\mpl.log
+                    Total 10 warnings found.
+2018/06/06 08:39:28 Building mre_custom
+                    LOG: .\build\ULTRA2503A_11C\log\mre_custom.log
+                    Total 22 warnings found.
+2018/06/06 08:39:43 Building mre_engine
+                    LOG: .\build\ULTRA2503A_11C\log\mre_engine.log
+                    Total 422 warnings found.
+2018/06/06 08:40:47 Building mtd
+                    LOG: .\build\ULTRA2503A_11C\log\mtd.log
+                    Total 1 warnings found.
+2018/06/06 08:40:59 Building ntpd
+                    LOG: .\build\ULTRA2503A_11C\log\ntpd.log
+                    Total 1 warnings found.
+2018/06/06 08:41:05 Building nvram
+                    LOG: .\build\ULTRA2503A_11C\log\nvram.log
+                    Total 2 warnings found.
+2018/06/06 08:41:18 Building obigo03cadp
+                    LOG: .\build\ULTRA2503A_11C\log\obigo03cadp.log
+                    Total 11 warnings found.
+2018/06/06 08:41:31 Building obigo03cfwadp
+                    LOG: .\build\ULTRA2503A_11C\log\obigo03cfwadp.log
+                    Total 4 warnings found.
+2018/06/06 08:41:43 Building obigo03cmmsadp
+                    LOG: .\build\ULTRA2503A_11C\log\obigo03cmmsadp.log
+                    Total 43 warnings found.
+2018/06/06 08:42:04 Building obigo03cpushadp
+                    LOG: .\build\ULTRA2503A_11C\log\obigo03cpushadp.log
+                    Total 19 warnings found.
+2018/06/06 08:42:14 Building obigo03cstkadp
+                    LOG: .\build\ULTRA2503A_11C\log\obigo03cstkadp.log
+                    Total 0 warnings found.
+2018/06/06 08:42:23 Building peripheral
+                    LOG: .\build\ULTRA2503A_11C\log\peripheral.log
+                    Total 114 warnings found.
+2018/06/06 08:43:01 Building postproc
+                    LOG: .\build\ULTRA2503A_11C\log\postproc.log
+                    Total 0 warnings found.
+2018/06/06 08:43:10 Building provider
+                    LOG: .\build\ULTRA2503A_11C\log\provider.log
+                    Total 2 warnings found.
+2018/06/06 08:43:21 Building sim_driver
+                    LOG: .\build\ULTRA2503A_11C\log\sim_driver.log
+                    Total 45 warnings found.
+2018/06/06 08:43:30 Building system
+                    LOG: .\build\ULTRA2503A_11C\log\system.log
+                    Total 95 warnings found.
+2018/06/06 08:43:56 Building tencentmcarev31adp
+                    LOG: .\build\ULTRA2503A_11C\log\tencentmcarev31adp.log
+                    Total 221 warnings found.
+2018/06/06 08:44:09 Building usb
+                    LOG: .\build\ULTRA2503A_11C\log\usb.log
+                    Total 0 warnings found.
+2018/06/06 08:44:24 Building usb_driver
+                    LOG: .\build\ULTRA2503A_11C\log\usb_driver.log
+                    Total 0 warnings found.
+2018/06/06 08:44:33 Building vendorapp
+                    LOG: .\build\ULTRA2503A_11C\log\vendorapp.log
+                    Total 0 warnings found.
+2018/06/06 08:44:43 Building verno
+                    LOG: .\build\ULTRA2503A_11C\log\verno.log
+                    Total 0 warnings found.
+2018/06/06 08:44:47 Building video
+                    LOG: .\build\ULTRA2503A_11C\log\video.log
+                    Total 4 warnings found.
+2018/06/06 08:45:09 Building video_codec
+                    LOG: .\build\ULTRA2503A_11C\log\video_codec.log
+                    Total 1 warnings found.
+2018/06/06 08:45:16 Building video_sec
+                    LOG: .\build\ULTRA2503A_11C\log\video_sec.log
+                    Total 9 warnings found.
+2018/06/06 08:45:29 Building winguo
+                    LOG: .\build\ULTRA2503A_11C\log\winguo.log
+                    Total 538 warnings found.
+2018/06/06 08:45:45 Building xmlp
+                    LOG: .\build\ULTRA2503A_11C\log\xmlp.log
+                    Total 2 warnings found.
+"hal\drv_def\drv_features_6261.h", line 86: Warning:  #1-D: last line of file ends without a newline
+
+   ^
+Linking ULTRA2503A_11C_PCB01_gprs_MT6261_S00.MAUI_11C_W13_52_SP3_V3 ...
+2018/06/06 08:45:53
+[Dependency] D:\MTK2503\SDK\tools\vivaPrelink.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\tools\vivaPrelink.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\tools\vivaPrelink.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\vivaPrelink.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\vivaPrelink.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\scatFrame.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+if exist pl_exclusion.txt del /q pl_exclusion.txt
+perl tools\partialLink.pl --armlink=C:\Progra~1\ARM\RVCT\Programs\3.1\569\win_32-pentium\armlink.exe           --armar=C
+:\Progra~1\ARM\RVCT\Programs\3.1\569\win_32-pentium\armar.exe          --lib-dir=.\build\ULTRA2503A_11C\gprs\MT6261o\lib
+        --lib-dir=mtk_lib\MT6261\S00\gprs\KAL_TRACE_OUTPUT\NONE --no-update --scatter-file=custom\system\ULTRA2503A_11C_
+BB\scatULTRA2503A_11C.txt --link-option-file=.\make\~sortedLibs.tmp --readelf=.\tools\MinGW\bin\arm-none-eabi-readelf.ex
+e --nm=.\tools\MinGW\bin\arm-none-eabi-nm.exe --link-err-file=.\build\ULTRA2503A_11C\MT6261.log --strip=.\tools\MinGW\bi
+n\arm-none-eabi-strip.exe & \
+                        (if ERRORLEVEL 1 \
+                                (echo link error) & \
+                                (if exist .\build\ULTRA2503A_11C\ULTRA2503A_11C_PCB01_gprs_MT6261_S00.elf (del /q .\buil
+d\ULTRA2503A_11C\ULTRA2503A_11C_PCB01_gprs_MT6261_S00.elf)))
+Trying normal link...
+Succeed to link
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\scatFrame.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+Creating binary file ULTRA2503A_11C_PCB01_gprs_MT6261_S00.MAUI_11C_W13_52_SP3_V3.bin
+C:\Progra~1\ARM\RVCT\Programs\3.1\569\win_32-pentium\fromelf.exe .\build\ULTRA2503A_11C\ULTRA2503A_11C_PCB01_gprs_MT6261
+_S00.elf -bin -output .\build\ULTRA2503A_11C\ULTRA2503A_11C_PCB01_gprs_MT6261_S00.MAUI_11C_W13_52_SP3_V3.bin
+Warning: Q3910W: Old syntax, please use '--bin'.
+Warning: Q3910W: Old syntax, please use '--output'.
+Finished: 0 information, 2 warning and 0 error messages.
+Processing vivaProcess.log
+Processing ckImgSize.log
+[Dependency] D:\MTK2503\SDK\.\tools\ckScatter.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\ckScatter.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\ckScatter.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+Generating DbgInfo Database...
+[DbgInfoGen] Printing the DBGINFO header...
+[DbgInfoGen] Parsing the symbol table...
+[DbgInfoGen] Parsing the line table...
+[DbgInfoGen]     ARM Linker, RVCT3.1 [Build 569]
+
+[DbgInfoGen] Printing the symbol table...
+[DbgInfoGen] Printing the file table...
+[DbgInfoGen] The DbgInfo DB is created. (.\tst\database_classb\DbgInfo_11CW1352SP3_ULTRA2503A_11C_MAUI_11C_W13_52_SP3_V3
+_2018_06_05_18_35)
+make[1]: Entering directory `D:/MTK2503/SDK'
+make[1]: Leaving directory `D:/MTK2503/SDK'
+Cgen -sfcm:
+Check DB result: 0
+Examine DB result: 0
+Generating ".\tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_S00_MAUI_11C_W13_52_SP3_V3".
+Check .\tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_S00_MAUI_11C_W13_52_SP3_V3
+Check DB result: 0
+Write DB result: 0
+Create file ".\tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_S00_MAUI_11C_W13_52_SP3_V3" successfully.
+CGen time spent : 2933 milliseconds.
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+[Dependency] D:\MTK2503\SDK\tools\auto_adjust_mem.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\vivaHelper.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\scatFrame.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\auto_adjust_mem.pm
+Generate cmm files
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\CMMAutoGen.pl
+[Dependency] D:\MTK2503\SDK\.\tools\\sysgenUtility.pm
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\CommonUtility.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\LISInfo.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\FileInfoParser.pm
+[Dependency] D:\MTK2503\SDK\.\tools\\sysGenUtility.pm
+Generate CFG file for flash tool
+[Dependency] D:\MTK2503\SDK\.\tools\cfgGen.pl
+[Dependency] D:\MTK2503\SDK\tools\pack_dep_gen.pm
+[Dependency] D:\MTK2503\SDK\tools\sysGenUtility.pm
+"hal\drv_def\drv_features_6261.h", line 86: Warning:  #1-D: last line of file ends without a newline
+
+   ^
+Generate a table for module ID and library...
+check system drive ....
+Cleaning make\~*.tmp files ...
+Done.
+2018/06/06 08:47:02
+make new aciton###########################zengjf################################
+AAPMCLOG: AAPMC.log is not existwriteINI , check_depend: 0
+exit command before
