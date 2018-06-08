@@ -7,6 +7,8 @@
 ## 参考文档
 
 * [MTK 功能机编译](https://blog.csdn.net/u010783226/article/details/73368922)
+* [MTK手机开发入门教程](https://wenku.baidu.com/view/242349d75727a5e9846a6152.html)
+* [Using multiple IF statements in a batch file](https://stackoverflow.com/questions/6711615/using-multiple-if-statements-in-a-batch-file)
 
 ## 代码跟踪
 
@@ -280,7 +282,7 @@ Path: `make\Gsm2.mak`
     ```
     * REL_CR_MMI_GPRS.mak
 * `new : backup cleanall genlog sysgen cleancodegen asngen codegen codegen_check asnregen resgen bootloader update`
-  ```
+  ```Makefile
   # *************************************************************************
   # New Build
   # *************************************************************************
@@ -328,7 +330,7 @@ Path: `make\Gsm2.mak`
   endif
   ```
   * `bootloader: gen_bl_verno gencompbld bl_preflow LINK_BL LINK_BL_CHECK BL_POSTBUILD`
-    ```
+    ```Makefile
     # *************************************************************************
     #  BOOTLOADER Targets
     # *************************************************************************
@@ -350,7 +352,7 @@ Path: `make\Gsm2.mak`
     endif
     ```
   * `update : backup genlog cleanbin codegen mcddll_update cksysdrv_slim resgen remake`
-    ```
+    ```Makefile
     # *************************************************************************
     #  Update Build
     # *************************************************************************
@@ -403,7 +405,7 @@ Path: `make\Gsm2.mak`
     endif
     ```
     * `remake : backup mcp_check genlog cleanbin genverno genoriverno libs $(BIN_FILE) cmmgen cfggen catgen done`
-      ```
+      ```Makefile
       # *************************************************************************
       #  Remake Build
       # *************************************************************************
@@ -449,9 +451,81 @@ Path: `make\Gsm2.mak`
       else # MODIS_CONFIG == TRUE
       remake : mcp_check genlog cleanbin genverno genoriverno
       endif #ifeq ($(strip $(MODIS_CONFIG)),FALSE)
-      ```
+      ```Makefile
+      * `libs : echo_lib_lists cleanlib startbuildlibs xgc_all_libs_2`
+        ```
+        # *************************************************************************
+        # Library Targets
+        # *************************************************************************
+        ifeq ($(strip $(MODIS_CONFIG)),FALSE)
+        ifneq ($(filter $(MAKECMDGOALS),remake),)
+        ifneq ($(strip $(REMAKE_WITH_CGEN)),FALSE)
+        libs: cgen
+        endif
+        endif
+        endif
+        
+        ifneq ($(strip $(LINT)),TRUE)
+        ifneq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
+        libs: cleanlib startbuildlibs $(COMPLIBLIST)
+        else 
+        libs : echo_lib_lists cleanlib startbuildlibs xgc_all_libs_2
+        endif 
+        else
+        libs: $(LINT_COMP_LIST)
+        endif
+        ```
+        * `startbuildlibs:`
+          ```Makefile
+          echo_lib_lists:
+            # mbis time probe
+          	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_S,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+          	@echo COMPLIBLIST=$(COMPLIBLIST) > make\complib.txt
+             # mbis time probe
+          	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+          
+          ifeq ($(strip $(MODIS_CONFIG)),FALSE)
+            startbuildlibs: gencompbld
+          else
+            startbuildlibs:
+          endif
+             # mbis time probe
+          	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_S,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+          	@echo Start to build $(COMPLIBLIST)
+          # Copy plutommi header files to a temp folder to improve compiler performance.
+          
+          ifeq ($(strip $(REDUCE_HEADER_DEPTH)),TRUE)
+          	@perl -e "print 'hTogether START TIME='";>>$(strip $(TARGDIR))\build.log
+          	@perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
+          
+          	@if exist $(COPY_MMI_INCLUDE_FILE) (copy /Y $(COPY_MMI_INCLUDE_FILE) tools\copy_mmi_include_h.bat >NUL)
+          
+          ifeq ($(strip $(RUN_HTOGETHER)),TRUE)
+          	@if exist $(CUS_MTK_LIB)\tools\copy_mmi_include_h.bat (copy $(CUS_MTK_LIB)\tools\copy_mmi_include_h.bat tools\copy_mmi_include_h.bat  >NUL)
+            ifeq ($(strip $(MMI_VERSION)),NEPTUNE_MMI)
+              ifeq ($(strip $(RTOS)),NUCLEUS)
+          		@copy /Y tools\copy_mmi_include_h_nucleus_neptune.bat tools\copy_mmi_include_h.bat >NUL
+              endif
+            endif
+          endif
+          	@echo Copying header files ......
+          	@if exist $(strip $(HEADER_TEMP))\*.* del /q /f $(strip $(HEADER_TEMP))\*.*
+          	@if exist tools\mmi_include.dep (del /q /f tools\mmi_include.dep)
+          	@if not exist $(strip $(HEADER_TEMP)) (md $(strip $(HEADER_TEMP)))
+          	-@if exist tools\copy_mmi_include_h.bat (tools\copy_mmi_include_h.bat $(strip $(HEADER_TEMP)) 1>nul)
+          
+          	@perl -e "print 'hTogether END TIME='";>>$(strip $(TARGDIR))\build.log
+          	@perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
+          
+          endif
+          
+             # mbis time probe
+          	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+          ```
 
 ## Generate Bootloader
+
+Path: `make/Gsm2.mak`
 
 * `bootloader: gen_bl_verno gencompbld bl_preflow LINK_BL LINK_BL_CHECK BL_POSTBUILD`
   * gen_bl_verno
@@ -469,12 +543,36 @@ Path: `make\Gsm2.mak`
     
     	@echo Generate BOOTLOADER CMM file ...
     #	@echo [Dependency] tools\CMMAutoGen.pl >$(basename $@).log
+        # echo .\BOOTLOADER_ULTRA2503A_11C_MT6261_nocode.cmm
+        # .\BOOTLOADER_ULTRA2503A_11C_MT6261_nocode.cmm
+        # echo .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3.elf
+        # .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3.elf
+        # echo .\EXT_BOOTLOADER_ULTRA2503A_11C_MT6261_nocode.cmm
+        # .\EXT_BOOTLOADER_ULTRA2503A_11C_MT6261_nocode.cmm
+        # echo .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3_ext.elf
+        # .\build\ULTRA2503A_11C)\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3_ext.elf
+        # 
+        # build\ULTRA2503A_11C\log\cmmgen_blnocode.log
+        #     ACTION: 3,
+        #     CMMFILE: .\EXT_BOOTLOADER_ULTRA2503A_11C_MT6261_nocode.cmm,
+        #     CMMDIR: .
+        #     ELFFILE: .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3_ext.elf, 
+        #     MAKEFILE: make\ULTRA2503A_11C_gprs.mak
+        #     MAUI_BIN: ULTRA2503A_11C_PCB01_gprs_MT6261_S00.MAUI_11C_W13_52_SP3_V3.bin, 
+        #     LISFILE: ~lis_temp
+        #     CC_CMD: C:\Progra~1\ARM\RVCT\Programs\3.1\569\win_32-pentium\armcc.exe --thumb      , 
+        #     VIA_CMD: --via, 
+        #     OPTION_TMP: make\~customIncDef.tmp
+        #     BIN_PATH: .\build\ULTRA2503A_11C\ULTRA2503A_11C_PCB01_gprs_MT6261_S00.MAUI_11C_W13_52_SP3_V3.bin
+        echo $(FIXPATH)\BOOTLOADER_$(strip $(CUSTOMER))_$(strip $(PLATFORM))_nocode.cmm
+        echo $(TARGDIR)\$(BTLD_PREFIX).elf
+        echo $(FIXPATH)\EXT_BOOTLOADER_$(strip $(CUSTOMER))_$(strip $(PLATFORM))_nocode.cmm
+        echo $(TARGDIR)\$(BTLD_EXT_PREFIX).elf
     	@if exist tools\CMMAutoGen.pl  \
     	((perl tools\CMMAutoGen.pl 2 $(FIXPATH)\BOOTLOADER_$(strip $(CUSTOMER))_$(strip $(PLATFORM))_nocode.cmm $(strip $(TARGDIR))\$(BTLD_PREFIX).elf $(strip $(THE_MF)) $(strip $(BIN_FILE)) ~lis_temp "$(CC)" "$(VIA)" make\~customIncDef.tmp $(strip $(INSIDE_MTK)) > $(strip $(COMPLOGDIR))\cmmgen_blnocode.log) & \
     		(if ERRORLEVEL 1 echo Error: generate BOOTLOADER CMM file Failed. Please check $(strip $(COMPLOGDIR))\cmmgen_blnocode.log & exit 1) & \
     		(perl tools\CMMAutoGen.pl 3 $(FIXPATH)\EXT_BOOTLOADER_$(strip $(CUSTOMER))_$(strip $(PLATFORM))_nocode.cmm $(strip $(TARGDIR))\$(BTLD_EXT_PREFIX).elf $(strip $(THE_MF)) $(strip $(BIN_FILE)) ~lis_temp "$(CC)" "$(VIA)" make\~customIncDef.tmp $(strip $(INSIDE_MTK)) > $(strip $(COMPLOGDIR))\cmmgen_extblnocode.log) & \
     		(if ERRORLEVEL 1 echo Error: generate EXT_BOOTLOADER CMM file Failed. Please check $(strip $(COMPLOGDIR))\cmmgen_extblnocode.log & exit 1))
-    
     
     	@echo Generate BOOTLOADER version number ...
     	@if not exist $(strip $(BTLDVERNODIR)) exit 0
@@ -494,3 +592,491 @@ Path: `make\Gsm2.mak`
        # mbis time probe
     	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
     ```
+  * Bootloader Compile
+    ```Makefile
+    $(info ---------------MODIS_CONFIG $(MODIS_CONFIG))
+    $(info LINT $(LINT))
+    $(info XGC_AND_NOT_BOOTLOADER $(XGC_AND_NOT_BOOTLOADER))
+    $(info AUTO_CHECK_DEPEND $(AUTO_CHECK_DEPEND))
+    $(info RULESDIR_TARGET $(RULESDIR_TARGET))
+    $(info NEED_CHECK_DEPEND_LIST $(NEED_CHECK_DEPEND_LIST))
+    ifneq ($(strip $(MODIS_CONFIG)),TRUE)
+    ifneq ($(strip $(LINT)),TRUE)
+    ifneq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
+    ifeq ($(strip $(AUTO_CHECK_DEPEND)),TRUE)
+    # in r\comp_dep\$module.det, $module.lib will depend on all source/header files used by all objects in that module
+    # so if the source/header are not changed, no need to call comp.mak and waste time to archive again
+    -include $(wildcard $(subst \,/,$(strip $(RULESDIR_TARGET)))/comp_dep/*.det)
+    %.lib: $(NEED_CHECK_DEPEND_LIST) $(NEED_CHECK_COMP_LIST)
+    $(info '.lib: $(NEED_CHECK_DEPEND_LIST) $(NEED_CHECK_COMP_LIST)')
+    endif
+    $(info '.lib:')
+    %.lib:
+    else
+    $(info 'xgc_all_libs xgc_all_libs_2')
+    xgc_all_libs xgc_all_libs_2:
+    endif
+    else
+    $(info '.ltp: gencompbld')
+    %.ltp: gencompbld
+    endif
+       # mbis time probe
+    ifneq ($(strip $(XGC)),TRUE)
+    	@if /I "$(strip $(MBIS_EN))" EQU "TRUE" (@perl -e "print 'T_S,$(@F),L,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+    	@if /I "$(strip $(MBIS_EN_OBJ_LOG))" EQU "TRUE" \
+    		(if not exist $(TARGDIR)\log\mbis\$* (md $(TARGDIR)\log\mbis\$*) &\
+    		if exist $(TARGDIR)\log\mbis\$*\*.mbis (del /q /f $(TARGDIR)\log\mbis\$*\*.mbis))
+    else
+    	@if /I "$(strip $(MBIS_EN))" EQU "TRUE" (@perl -e "print 'T_S,$@,L,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+    endif
+    
+    	@if exist $(strip $(COMPLIBDIR))\$*.lib (del /q $(strip $(COMPLIBDIR))\$*.lib)
+    	@if not exist $(strip $(COMPLIBDIR)) (md $(COMPLIBDIR))
+    
+    	$(info "------------------------XGC_AND_NOT_BOOTLOADER:" $(XGC_AND_NOT_BOOTLOADER))
+    	$(info "FOTA_LOG:" $(FOTA_LOG))
+    	$(info "BOOTLOADER_LOG:" $(BOOTLOADER_LOG))
+    	$(info "BOOTLOADER_EXT_LOG:" $(BOOTLOADER_EXT_LOG))
+    	$(info "LOG:" $(LOG))
+    ifneq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
+    	@if $*==fota \
+    		(@echo Beginning $* component build process ... > $(FOTA_LOG)) \
+    	else \
+    		@if $*==bootloader \
+    			(@echo Beginning $* component build process ... > $(BOOTLOADER_LOG)) \
+    		else \
+    			@if $*==bootloader_ext \
+    				(@echo Beginning $* component build process ... > $(BOOTLOADER_EXT_LOG)) \
+    			else \
+    				(@echo Beginning $* component build process ... >> $(LOG))
+    
+    	@perl tools\time.pl
+    	@echo zengjf $*
+    	@echo Building $*
+    	@echo                     LOG: $(strip $(COMPLOGDIR))\$*.log
+    
+    	$(info "----------------OBJSDIR:" $(OBJSDIR))
+    	$(info "ACTION:" $(ACTION))
+    	@if not exist $(strip $(OBJSDIR))\$* (md $(strip $(OBJSDIR))\$*)
+    	@if $(ACTION)==new if exist $(strip $(RULESDIR))\$*_dep\*.det del /f /q $(strip $(RULESDIR))\$*_dep\*.det
+    	@if $(ACTION)==bm_new if exist $(strip $(RULESDIR))\$*_dep\*.det del /f /q $(strip $(RULESDIR))\$*_dep\*.det
+    	@if not $(ACTION)==remake if not exist $(strip $(RULESDIR))\$*_dep md $(strip $(RULESDIR))\$*_dep
+      ifneq ($(strip $(AUTO_CHECK_DEPEND)),TRUE)
+    	@if $(ACTION)==new if exist $(strip $(RULESDIR))\$*.dep del /q /f $(strip $(RULESDIR))\$*.dep
+    	@if $(ACTION)==bm_new if exist $(strip $(RULESDIR))\$*.dep del /q /f $(strip $(RULESDIR))\$*.dep
+      else
+        # extract all *.det from $module.dep, otherwise, the det of unchanged files will lose
+    	@if not $(ACTION)==remake if exist $(strip $(RULESDIR))\$*.dep (perl tools\pack_dep_gen.pl --extract $(strip $(RULESDIR))\$*.dep NULL $(strip $(RULESDIR))\$*_dep NULL)
+      endif
+    	@if exist *.via del /f /q *.via
+    	@if exist *.d del /f /q *.d
+    endif
+       # -----------------------------
+       # invoke component build script
+       # -----------------------------
+    # Start to extract obj
+    	$(info "---------------LINT:" $(LINT))
+    	$(info "LINT:" $(LINT))
+    	$(info "XGC:" $(XGC))
+    	$(info "RVCT_PARTIAL_LINK:" $(RVCT_PARTIAL_LINK))
+    	$(info "OBJSDIR:" $(OBJSDIR))
+    ifneq ($(strip $(LINT)),TRUE)
+      ifneq ($(strip $(XGC)),TRUE)
+        ifneq ($(strip $(RVCT_PARTIAL_LINK)),TRUE)
+    			@if exist $(strip $(OBJSDIR))\$*\$*.lib_bak if not exist $(subst /,\,$(OBJSDIR))\$*\*.obj  perl tools\extract_obj_from_lib.pl  $(subst /,\,$(OBJSDIR))\$*\$*.lib_bak  $(subst /,\,$(OBJSDIR))\$* $(subst /,\,$(LIB)) $(TARGDIR)\module\$*\$*.lis
+        endif
+      endif
+    endif
+    # End of extract obj
+    
+    	$(info "------------------build log:" $(strip $(TARGDIR))\build.log)
+    	@perl -e "print '$* START TIME='";>>$(strip $(TARGDIR))\build.log
+    	@perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
+    	$(info "LINT" $(LINT))
+    	$(info "XGC_AND_NOT_BOOTLOADER" $(XGC_AND_NOT_BOOTLOADER))
+    	$(info "BM_NEW" $(BM_NEW))
+    	$(info "COMPLOGDIR" $(COMPLOGDIR))
+    ifneq ($(strip $(LINT)),TRUE)
+    #@echo tools\make.exe -fmake\comp.mak -r -R COMPONENT=$* ... $(strip $(COMPLOGDIR))\$*.log
+    ifneq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
+    	$(info tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) --no-print-directory COMPONENT=$* setup_env > $(strip $(COMPLOGDIR))\$*_setEnv.log 2>&1)
+    	tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) --no-print-directory COMPONENT=$* setup_env > $(strip $(COMPLOGDIR))\$*_setEnv.log 2>&1
+    
+      ifeq ($(strip $(call Upper,$(BM_NEW))),TRUE)
+    			@if not exist $(strip $(COMPLOGDIR))\$* md $(strip $(COMPLOGDIR))\$*
+    			(tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) COMPONENT=$* update_lib > $(strip $(COMPLOGDIR))\$*.log 2>&1) & \
+    			(if ERRORLEVEL 1 \
+    			  (perl tools\get_log.pl $(strip $(COMPLOGDIR))\$*.log $(strip $(COMPLOGDIR))\$* tools\copy_mmi_include_h.bat) & \
+    			  (rd /S /Q $(strip $(COMPLOGDIR))\$*) & \
+    			  (exit 1) \
+    			else \
+    			  (perl tools\get_log.pl $(strip $(COMPLOGDIR))\$*.log $(strip $(COMPLOGDIR))\$* tools\copy_mmi_include_h.bat) & \
+    			  (rd /S /Q $(strip $(COMPLOGDIR))\$*) \
+    			)
+      else
+    			$(info "BM_NEW FALSE COMPLOGDIR" $(COMPLOGDIR))
+    			@if not exist $(strip $(COMPLOGDIR))\$* md $(strip $(COMPLOGDIR))\$*
+    			$(info "BM_NEW FALSE COMPLOGDIR" $(COMPLOGDIR))
+    			(tools\make.exe -fmake\comp.mak -r -R $(strip $(CMD_ARGU)) COMPONENT=$* update_lib > $(strip $(COMPLOGDIR))\$*.log 2>&1) & \
+    			(if ERRORLEVEL 1 \
+    			  (perl tools\get_log.pl $(strip $(COMPLOGDIR))\$*.log $(strip $(COMPLOGDIR))\$* tools\copy_mmi_include_h.bat) & \
+    			  (rd /S /Q $(strip $(COMPLOGDIR))\$*) & \
+    			  (exit 1) \
+    			else \
+    			  (perl tools\get_log.pl $(strip $(COMPLOGDIR))\$*.log $(strip $(COMPLOGDIR))\$* tools\copy_mmi_include_h.bat) & \
+    			  (rd /S /Q $(strip $(COMPLOGDIR))\$*) \
+    		)
+      endif
+    
+    else
+    #XGC
+    
+    	$(info "BM_NEW" $(BM_NEW))
+      ifeq ($(strip $(call Upper,$(BM_NEW))),TRUE)
+    			XGConsole /command="tools\make.exe  -fmake\intermed.mak -k -r -R $(strip $(CMD_ARGU))  " /NOLOGO /profile="tools\XGConsole.xml"
+      else
+    			XGConsole /command="tools\make.exe  -fmake\intermed.mak -r -R $(strip $(CMD_ARGU))   " /NOLOGO /profile="tools\XGConsole.xml"
+      endif
+    endif
+    
+    	$(info "XGC_AND_NOT_BOOTLOADER" $(XGC_AND_NOT_BOOTLOADER))
+    ifneq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
+    	@if $*==fota \
+    		(@type $(strip $(COMPLOGDIR))\$*.log >> $(FOTA_LOG)) \
+    	else \
+    		@if $*==bootloader \
+    			(@type $(strip $(COMPLOGDIR))\$*.log >> $(BOOTLOADER_LOG)) \
+    		else \
+    			@if $*==bootloader_ext \
+    				(@type $(strip $(COMPLOGDIR))\$*.log >> $(BOOTLOADER_EXT_LOG)) \
+    			else \
+    				(@type $(strip $(COMPLOGDIR))\$*.log >> $(LOG))
+    
+    	@perl .\tools\chk_lib_err_warn.pl $(strip $(COMPLOGDIR))\$*.log
+    endif
+    
+    else
+    #LINT
+    	@if not exist $(COMPLINTLOGDIR)	(md $(COMPLINTLOGDIR))
+    	@if exist $(strip $(COMPLINTLOGDIR))\targetl.end del /F /Q $(strip $(COMPLINTLOGDIR))\targetl.end
+    	@if exist $(strip $(COMPLINTLOGDIR))\$*_build.log del /F /Q $(strip $(COMPLINTLOGDIR))\$*_build.log
+    	@if exist $(strip $(COMPLINTLOGDIR))\$*.log del /F /Q $(strip $(COMPLINTLOGDIR))\$*.log
+    	tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) COMPONENT=$* update_lib> $(strip $(COMPLINTLOGDIR))\$*_build.log 2>&1 
+    endif
+    	perl -e "print '$* END TIME='";>>$(strip $(TARGDIR))\build.log
+    	perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
+       # mbis time probe
+    ifneq ($(strip $(XGC)),TRUE)
+    	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (if exist $(TARGDIR)\log\mbis\$*\*.mbis (perl tools\mbis.pl -o $(TARGDIR)\log\mbis\$*)) 
+    	@if exist $(TARGDIR)\log\mbis\$*\*.mbis ((del /q /f $(TARGDIR)\log\mbis\$*\*.mbis) & (rmdir /S /Q $(TARGDIR)\log\mbis\$*))
+    	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$(@F),L,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+    else
+    	@if /I "$(strip $(MBIS_EN))" EQU "TRUE" (@perl -e "print 'T_E,$@,L,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+    endif
+    endif #ifneq ($(strip $(MODIS_CONFIG)),TRUE)
+    ```
+  * `tools\make.exe -fmake\comp.mak -k -r -R -j4 --no-print-directory COMPONENT=bootloader setup_env > .\build\ULTRA2503A_11C\log\bootloader_setEnv.log 2>&1`
+  * `tools\make.exe -fmake\comp.mak -r -R -j4 COMPONENT=bootloader update_lib > .\build\ULTRA2503A_11C\log\bootloader.log 2> &1`
+  * Make Help
+    ```Shell
+    Usage: make [options] [target] ...
+    Options:
+      -b, -m                      Ignored for compatibility.
+      -B, --always-make           Unconditionally make all targets.
+      -C DIRECTORY, --directory=DIRECTORY
+                                  Change to DIRECTORY before doing anything.
+      -d                          Print lots of debugging information.
+      --debug[=FLAGS]             Print various types of debugging information.
+      -e, --environment-overrides
+                                  Environment variables override makefiles.
+      -f FILE, --file=FILE, --makefile=FILE
+                                  Read FILE as a makefile.
+      -h, --help                  Print this message and exit.
+      -i, --ignore-errors         Ignore errors from commands.
+      -I DIRECTORY, --include-dir=DIRECTORY
+                                  Search DIRECTORY for included makefiles.
+      -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.
+      -k, --keep-going            Keep going when some targets can't be made.
+      -l [N], --load-average[=N], --max-load[=N]
+                                  Don't start multiple jobs unless load is below N.
+      -L, --check-symlink-times   Use the latest mtime between symlinks and target.
+      -n, --just-print, --dry-run, --recon
+                                  Don't actually run any commands; just print them.
+      -o FILE, --old-file=FILE, --assume-old=FILE
+                                  Consider FILE to be very old and don't remake it.
+      -p, --print-data-base       Print make's internal database.
+      -q, --question              Run no commands; exit status says if up to date.
+      -r, --no-builtin-rules      Disable the built-in implicit rules.
+      -R, --no-builtin-variables  Disable the built-in variable settings.
+      -s, --silent, --quiet       Don't echo commands.
+      -S, --no-keep-going, --stop
+                                  Turns off -k.
+      -t, --touch                 Touch targets instead of remaking them.
+      -v, --version               Print the version number of make and exit.
+      -w, --print-directory       Print the current directory.
+      --no-print-directory        Turn off -w, even if it was turned on implicitly.
+      -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
+                                  Consider FILE to be infinitely new.
+      --warn-undefined-variables  Warn when an undefined variable is referenced.
+
+    This program built for i386-pc-mingw32
+    Report bugs to <bug-make@gnu.org>
+    ```
+  * Bootloader Makefile Load
+    ```Makefile
+    ...[省略]
+    ifdef $($(COMPONENT))
+      MODULE_MAKEFILE := make\$(strip $($(COMPONENT)))\$(strip $(COMPONENT))\$(strip $(COMPONENT)).mak
+    else
+      MODULE_MAKEFILE := make\$(strip $(COMPONENT))\$(strip $(COMPONENT)).mak
+    endif
+    include $(MODULE_MAKEFILE)
+    ...[省略]
+    ```
+  * setup_env
+    ```Makefile
+    setup_env:
+    ifneq ($(strip $(MODIS_CONFIG)),TRUE)
+      ifneq ($(strip $(GEN_MODULE_INFO)),TRUE)
+    	-@if not exist $(TARGDIR)\via md $(TARGDIR)\via
+    	@tools\strcmpex.exe abc abc e $(TARGDIR)\via\$(strip $(COMPONENT)).via $(CINTWORK) $(CDEFS)
+    	@tools\strcmpex.exe abc abc e $(TARGDIR)\via\$(strip $(COMPONENT))_inc.via $(CINCDIRS)
+    	@tools\warp.exe $(TARGDIR)\via\$(strip $(COMPONENT)).via
+    	@tools\warp.exe $(TARGDIR)\via\$(strip $(COMPONENT))_inc.via
+    	-@if not exist $(TARGDIR)\log\$(strip $(COMPONENT)) md $(TARGDIR)\log\$(strip $(COMPONENT))
+    	-@if not exist $(TARGDIR)\dep\$(strip $(COMPONENT)) md $(TARGDIR)\dep\$(strip $(COMPONENT))
+      else
+    	@echo Generating $(COMPONENT) information is done.
+      endif
+    else
+    	@echo $(COMPONENT) MoDIS module setup is done.
+    endif
+    ```
+  * update_lib
+    ```Makefile
+    # *************************************************************************
+    # Library Targets
+    # *************************************************************************
+    update_lib: $(TARGLIB)
+    	@if exist $(RULESDIR)\$(strip $(COMPONENT))_dep rd /s /q $(RULESDIR)\$(strip $(COMPONENT))_dep
+    
+    ifeq ($(strip $(RVCT_MULTI_FILE)),NONE)
+    
+    $(TARGLIB) :
+    
+       # If library for customer release exists.
+       # Copy and update it or create a new one
+       # mbis time probe
+    	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (@perl -e "print 'T_S,$@,L,'. time . \"\n\"";>>$(TARGDIR)\log\mbis\$(strip $(COMPONENT))\$(*F)".mbis")
+    	@if exist $(OBJ_ARCHIVE) \
+    		(del /f /q $(OBJ_ARCHIVE))
+    	@if exist $(OBJ_ARCHIVE_SORT) \
+    		(del /f /q $(OBJ_ARCHIVE_SORT))
+    
+    ifneq ($(words $(CFLAGS)),0)
+    	@echo CFLAGS = $(strip $(CFLAGS))
+    endif
+    ifneq ($(words $(CPLUSFLAGS)),0)
+    	@echo CPLUSFLAGS = $(strip $(CPLUSFLAGS))
+    endif
+    ifneq ($(words $(AFLAGS)),0)
+    	@echo AFLAGS = $(strip $(AFLAGS))
+    endif
+    ifneq ($(words $(ADEFS)),0)
+    	@echo ADEFS = $(strip $(ADEFS))
+    endif
+    
+    	@for %%i in ($(COMPOBJS_DIR)/*.obj) do \
+    		echo $(COMPOBJS_DIR)/%%i>>$(OBJ_ARCHIVE)
+    	@perl .\tools\sortobj.pl $(OBJ_ARCHIVE) $(OBJ_ARCHIVE_SORT)
+    
+    ifneq ($(filter $(PARTIAL_TRACE_LIB),$(COMPONENT)),)
+    	@if exist $(FIXPATH)\$(CUS_MTK_LIB_TRACE)\$(strip $(COMPONENT)).lib \
+    		(copy /z $(FIXPATH)\$(CUS_MTK_LIB_TRACE)\$(strip $(COMPONENT)).lib $(subst /,\,$(TARGLIB)))
+    else
+    	@if exist $(FIXPATH)\$(CUS_MTK_LIB)\$(strip $(COMPONENT)).lib \
+    		(copy /z $(FIXPATH)\$(CUS_MTK_LIB)\$(strip $(COMPONENT)).lib $(subst /,\,$(TARGLIB)))
+    endif
+    
+    	$(strip $(LIB)) -create $(TARGLIB) $(VIA) $(OBJ_ARCHIVE_SORT)
+    
+    	@echo $(TARGLIB) is updated
+    
+    	@if exist $(OBJ_ARCHIVE) \
+    		(del /f /q $(OBJ_ARCHIVE))
+    	@if exist $(OBJ_ARCHIVE_SORT) \
+    		(del /f /q $(OBJ_ARCHIVE_SORT))
+    
+    ifeq ($(strip $(AUTO_CHECK_DEPEND)),TRUE)
+      ifneq ($(ACTION),remake)
+        # delete $module.dep, otherwise there will be duplicated info appended, becasue *.det are already extracted from $module.dep
+    	@if exist $(RULESDIR)\$(strip $(COMPONENT)).dep del /q $(RULESDIR)\$(strip $(COMPONENT)).dep
+      endif
+    endif
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det type $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det >> $(RULESDIR)\$(strip $(COMPONENT)).dep
+    	@if not $(ACTION)==remake if not exist $(RULESDIR)\$(strip $(COMPONENT)).dep if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det type $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det > $(RULESDIR)\$(strip $(COMPONENT)).dep
+    ifneq ($(ACTION),remake)
+      # generate r\comp_dep\$module.det to be included by Gsm2.mak, in order to check $module.lib with all source/header files in that module
+    	@if exist $(RULESDIR)\$(strip $(COMPONENT)).dep (perl tools\pack_dep_gen.pl $(RULESDIR)\comp_dep\$(strip $(COMPONENT)).det $(strip $(COMPONENT)).lib $(RULESDIR)\$(strip $(COMPONENT))_dep \w+\.det) else (if exist $(RULESDIR)\comp_dep\$(strip $(COMPONENT)).det del $(RULESDIR)\comp_dep\$(strip $(COMPONENT)).det)
+    endif
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det del /f /q $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det
+    	@if exist $(RULESDIR)\$(strip $(COMPONENT))_dep rd /s /q $(RULESDIR)\$(strip $(COMPONENT))_dep
+    ifeq ($(findstring j2me,$(strip $(COMPONENT))),j2me)
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep copy /y $(RULESDIR)\$(strip $(COMPONENT)).dep make\$(strip $(COMPONENT))
+    endif
+    ifeq ($(strip $(COMPONENT)),jblendia)
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep copy /y $(RULESDIR)\$(strip $(COMPONENT)).dep make\$(strip $(COMPONENT))
+    endif
+    ifeq ($(strip $(COMPONENT)),ijet_adp)
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep copy /y $(RULESDIR)\$(strip $(COMPONENT)).dep make\$(strip $(COMPONENT))
+    endif
+    ifeq ($(strip $(COMPONENT)),nemo_adp)
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep copy /y $(RULESDIR)\$(strip $(COMPONENT)).dep make\$(strip $(COMPONENT))
+    endif
+       # mbis time probe
+    	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (@perl -e "print 'T_E,$@,L,'. time . \"\n\"";>>$(TARGDIR)\log\mbis\$(strip $(COMPONENT))\$(*F)".mbis")
+    endif
+    
+    ifeq ($(strip $(RVCT_MULTI_FILE)),MULTI_FILE)
+    ifeq ($(strip $(COMPILER)),RVCT)
+    
+    $(TARGLIB):
+       # mbis time probe
+    	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (@perl -e "print 'T_S,$@,L,'. time . \"\n\"";>>$(TARGDIR)\log\mbis\$(strip $(COMPONENT))\$(*F)".mbis")
+    	@echo Compiling $< ...
+    	@tools\strcmpex.exe $(ACTION) remake e $(*F).via  $(CINTWORK) -c $(CFLAGS) $(CDEFS) $(CINCDIRS) --multifile -o $(COMPOBJS_DIR)/$(strip $(COMPONENT)).obj $(CPPSRCS) $(CSRCS) $<
+    	@tools\strcmpex.exe $(ACTION) remake n $(*F).via  $(CINTWORK) -c $(CFLAGS) $(CDEFS) $(CINCDIRS) --multifile -o $(COMPOBJS_DIR)/$(strip $(COMPONENT)).obj $(CPPSRCS) $(CSRCS) $<
+    	@if exist $(*F).via tools\warp.exe $(*F).via
+    	@if exist $(*F).via $(CMPLR) -via $(*F).via
+    
+    	@if exist $(OBJ_ARCHIVE) \
+    		(del /f /q $(OBJ_ARCHIVE))
+    	@if exist $(OBJ_ARCHIVE_SORT) \
+    		(del /f /q $(OBJ_ARCHIVE_SORT))
+    
+    ifneq ($(words $(CFLAGS)),0)
+    	@echo CFLAGS = $(strip $(CFLAGS))
+    endif
+    ifneq ($(words $(CPLUSFLAGS)),0)
+    	@echo CPLUSFLAGS = $(strip $(CPLUSFLAGS))
+    endif
+    ifneq ($(words $(AFLAGS)),0)
+    	@echo AFLAGS = $(strip $(AFLAGS))
+    endif
+    ifneq ($(words $(ADEFS)),0)
+    	@echo ADEFS = $(strip $(ADEFS))
+    endif
+    
+    	@for %%i in ($(COMPOBJS_DIR)/*.obj) do \
+    		echo $(COMPOBJS_DIR)/%%i>>$(OBJ_ARCHIVE)
+    	@perl .\tools\sortobj.pl $(OBJ_ARCHIVE) $(OBJ_ARCHIVE_SORT)
+    
+    ifneq ($(filter $(PARTIAL_TRACE_LIB),$(COMPONENT)),)
+    	@if exist $(FIXPATH)\$(CUS_MTK_LIB_TRACE)\$(strip $(COMPONENT)).lib \
+    		(copy /z $(FIXPATH)\$(CUS_MTK_LIB_TRACE)\$(strip $(COMPONENT)).lib $(subst /,\,$(TARGLIB)))
+    else
+    	@if exist $(FIXPATH)\$(CUS_MTK_LIB)\$(strip $(COMPONENT)).lib \
+    		(copy /z $(FIXPATH)\$(CUS_MTK_LIB)\$(strip $(COMPONENT)).lib $(subst /,\,$(TARGLIB)))
+    endif
+    
+    	$(strip $(LIB)) -create $(TARGLIB) $(VIA) $(OBJ_ARCHIVE_SORT)
+    
+    	@echo $(TARGLIB) is updated
+    
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det type $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det >> $(RULESDIR)\$(strip $(COMPONENT)).dep
+    	@if not $(ACTION)==remake if not exist $(RULESDIR)\$(strip $(COMPONENT)).dep if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det type $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det > $(RULESDIR)\$(strip $(COMPONENT)).dep
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det del /f /q $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det
+    	@if exist $(RULESDIR)\$(strip $(COMPONENT))_dep rd /s /q $(RULESDIR)\$(strip $(COMPONENT))_dep
+    ifeq ($(findstring j2me,$(strip $(COMPONENT))),j2me)
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep copy /y $(RULESDIR)\$(strip $(COMPONENT)).dep make\$(strip $(COMPONENT))
+    endif
+    ifeq ($(strip $(COMPONENT)),jblendia)
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep copy /y $(RULESDIR)\$(strip $(COMPONENT)).dep make\$(strip $(COMPONENT))
+    endif
+    ifeq ($(strip $(COMPONENT)),ijet_adp)
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep copy /y $(RULESDIR)\$(strip $(COMPONENT)).dep make\$(strip $(COMPONENT))
+    endif
+    ifeq ($(strip $(COMPONENT)),nemo_adp)
+    	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep copy /y $(RULESDIR)\$(strip $(COMPONENT)).dep make\$(strip $(COMPONENT))
+    endif
+    endif
+    endif
+       # mbis time probe   
+    	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (@perl -e "print 'T_E,$@,L,'. time . \"\n\"";>>$(TARGDIR)\log\mbis\$(strip $(COMPONENT))\$(*F)".mbis")
+    ```
+  * bat script `/I` 开关(如果指定)说明要进行的字符串比较不分大小写；
+  * BAT脚本中可以使用type命令获取文件内容；
+  * Compile Log Info：`build\ULTRA2503A_11C\bootloader.log`；
+* `LINK_BL: LINK_BL_BIN_FILE LINK_BLEXT_BIN_FILE`
+  ```Makefile
+  # *************************************************************************
+  #  Executable Bootloader Targets
+  # *************************************************************************
+  LINK_BL: LINK_BL_BIN_FILE LINK_BLEXT_BIN_FILE
+  BL_POSTBUILD: BLFILE_POSTBUILD BLEXTFILE_POSTBUILD
+  
+  #ifneq ($(strip $(AUTO_CHECK_DEPEND)),TRUE)
+  #$(BTLD_BIN_FILE): FORCE
+  #else
+  #-include $(strip $(RULESDIR_TARGET))\postgen_dep\.\bootloader.det
+  #endif
+  #$(BTLD_BIN_FILE): $(strip $(RULESDIR_TARGET))\postgen_dep\bl_preflow.det $(strip $(RULESDIR_TARGET))\postgen_dep\gen_bl_verno.det
+  
+  LINK_BL_BIN_FILE:
+  	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_S,$@,B,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+  	@tools\make.exe -fmake\gsm2.mak -k -r -R XGC_AND_NOT_BOOTLOADER=FALSE CUSTOMER=$(strip $(CUSTOMER)) PROJECT=$(strip $(PROJECT)) bootloader.lib
+  
+  	@echo Linking $(strip $(BTLD_PREFIX)) ...
+  	@perl tools\time.pl -n
+  	@echo $(BTLDLNKOPT) > make\~libs.tmp
+  	@echo $(strip $(COMPLIBDIR))\bootloader.lib(*) >> make\~libs.tmp
+  	@if exist make\~bllibs.tmp (type make\~bllibs.tmp >> make\~libs.tmp)
+  	@perl .\tools\sortLib.pl make\~libs.tmp $(strip $(COMPOBJS))
+  	@if exist make\~sortedLibs.tmp (copy /y make\~sortedLibs.tmp $(strip $(COMPLOGDIR))\link_option_bl.log >nul)
+    ifeq ($(strip $(PARTIAL_SOURCE)),TRUE)
+  	tools\Linker.exe BOOTLOADER $(strip $(LINK)) $(strip $(BOOTLOADER_LOG)) NONE $(strip $(VIA)) NONE $(strip $(BIN_CREATE)) $(strip $(TARGDIR)) $(BTLD_PREFIX).elf $(strip $(BIN_FORMAT)) $(strip $(BTLD_BIN_FILE)) $(strip $(TST_DB)) $(BTLD_PREFIX).lis
+    else
+  	@($(LINK) $(VIA) make\~sortedLibs.tmp >> $(BOOTLOADER_LOG) 2>&1) & \
+  	(if ERRORLEVEL 1 \
+  				(echo Error: link failed! Please check $(BOOTLOADER_LOG)) & \
+  				(if exist $(strip $(TARGDIR))\$(BTLD_PREFIX).elf (del /q $(strip $(TARGDIR))\$(BTLD_PREFIX).elf)))
+    endif
+   
+  	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$@,B,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+  
+  BLFILE_POSTBUILD:
+  	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_S,$@,B,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+  	@if not exist $(strip $(TARGDIR))\$(BTLD_PREFIX).elf \
+  		(echo Error: $(strip $(TARGDIR))\$(BTLD_PREFIX).elf does not exist! Please check link error for bootloader. & exit 1)
+  	$(strip $(BIN_CREATE)) $(strip $(TARGDIR))\$(BTLD_PREFIX).elf $(BIN_FORMAT) -output $(strip $(TARGDIR))\$(BTLD_BIN_FILE)
+  ifneq ($(filter $(strip $(PLATFORM)),$(SV5_PLATFORM)),)
+  	(@if /I "$(strip $(SW_BINDING_SUPPORT))" EQU "BIND_TO_CHIP"  .\tools\update_img.exe -blpath $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) -keyini $(strip $(KEYFILE_PATH))) & \
+  	(@if /I "$(strip $(SW_BINDING_SUPPORT))" EQU "BIND_TO_KEY"   .\tools\update_img.exe -blpath $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) -keyini $(strip $(KEYFILE_PATH))) & \
+  	@if not exist make\~gfh_cfg.tmp (tools\make.exe -fmake\gsm2.mak -r -R gen_gfh_cfg)
+  	@echo $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE))> make\~gfh_files.tmp
+  	@perl tools\gfh_process.pl make\~gfh_files.tmp make\~gfh_cfg.tmp $(strip $(THE_MF)) > $(strip $(COMPLOGDIR))\gfh_process_bl.log 2>&1 & \
+  	(if ERRORLEVEL 1 (echo Error: Failed in gfh_process.pl. Please check $(strip $(COMPLOGDIR))\gfh_process_bl.log & exit 1))
+  #	@echo [Dependency] tools\update_img.exe $(KEYFILE_PATH) tools\gfh_process.pl >$(RULESDIR)\postgen_dep\bootloader.log
+  else
+  	@if exist $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE))\READ_ONLY \
+  		copy /Y $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE))\READ_ONLY $(strip $(TARGDIR))\READ_ONLY & \
+  		rmdir /S /Q $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) & \
+  		move /Y $(strip $(TARGDIR))\READ_ONLY $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE))
+  
+  	(@if /I "$(strip $(SW_BINDING_SUPPORT))" EQU "BIND_TO_CHIP"  .\tools\update_img.exe -blpath $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) -keyini $(strip $(KEYFILE_PATH))) & \
+  	(@if /I "$(strip $(SW_BINDING_SUPPORT))" EQU "BIND_TO_KEY"   .\tools\update_img.exe -blpath $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) -keyini $(strip $(KEYFILE_PATH))) & \
+  
+  	@perl .\tools\bl_append.pl $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) $(strip $(BTLDVERNODIR))\bl_verno.c $(strip $(BL_SCATTERFILE)) $(strip $(THE_MF)) $(strip $(TARGDIR))\$(BTLD_PREFIX).sym $(call Upper,$(strip $(BIN_FILE))) $(strip $(VERNO))
+  #	@echo [Dependency] tools\update_img.exe $(KEYFILE_PATH) tools\bl_append.pl >$(RULESDIR)\postgen_dep\bootloader.log
+  endif
+  
+  	@if exist $(strip $(TARGDIR))\$(strip $(BIN_FILE))\ROM \
+  		(if exist $(strip $(TARGDIR))\$(strip $(BIN_FILE))\$(strip $(BTLD_BIN_FILE)) \
+  			del $(strip $(TARGDIR))\$(strip $(BIN_FILE))\$(strip $(BTLD_BIN_FILE))) & \
+  		copy /Y $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) $(strip $(TARGDIR))\$(strip $(BIN_FILE)) > nul
+  
+    ifeq ($(strip $(PARTIAL_SOURCE)),TRUE)
+  	tools\Linker.exe BOOTLOADERs $(strip $(LINK)) $(strip $(LOG)) $(strip $(LNKERRORLOG)) $(strip $(VIA)) $(strip $(HEADER_TEMP)) $(strip $(BIN_CREATE)) $(strip $(TARGDIR)) $(strip $(IMG_FILE)) $(strip $(BIN_FORMAT)) $(strip $(BTLD_BIN_FILE)) $(strip $(TST_DB)) $(TARGNAME).lis
+    endif
+  	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$@,B,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
+  ```
