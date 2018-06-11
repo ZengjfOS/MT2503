@@ -8,6 +8,7 @@
 
 ## 分析、测试、验证文档
 
+* [0011_Architecture_of_MAUI.md](./docs/0011_Architecture_of_MAUI.md)
 * [0010_Refer_Docs.md](./docs/0010_Refer_Docs.md)
 * [0009_MT2503_Make_Hacking.md](./docs/0009_MT2503_Make_Hacking.md)
 * [0008_Perl.md](./docs/0008_Perl.md)

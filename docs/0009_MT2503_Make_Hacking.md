@@ -24,7 +24,7 @@
     ```Perl
     $prj_file = "make/${custom}_${project}.mak";
     ...[省略]
-    sub get_package 
+    sub get_package
     {
       my $package = "";
       if (-e "$prj_file") {
@@ -93,7 +93,7 @@
       {
         if (/^(\S+)\s*=\s*(\S+)/) {         # 匹配以=为键值对的行
           $line++;
-          # Returns an uppercased version of EXPR. 
+          # Returns an uppercased version of EXPR.
           if ($1 ne uc($1)) {               # 键值对的key要全部大写
             print "Line $line: Feature name $1 should be UPPER cases. Correct $1 to ".uc($1)." automatically.\n";
             print LOGFILE "Line $line: Feature name $1 should be UPPER cases. Correct $1 to ".uc($1)." automatically.\n";
@@ -125,7 +125,7 @@
     }
     close LOGFILE;
     close FILE_HANDLE;
-    
+
     # flavorMF=
     # copy /y make\ULTRA2503A_11C_gprs.mak make\> nul
     system("copy /y ${makeFolder}${custom}_${project}.mak ${makeFolder}${flavorMF}> nul");
@@ -163,7 +163,7 @@
   * `make\app_cfg.mak`
     ```Perl
     open(F,">make\\app_cfg.mak");
-    
+
     if ($action eq "lint") {
       print F "LINT=TRUE\n";
       @theAct = qw(remake);
@@ -210,7 +210,7 @@
         }
       }
     }
-    
+
     if ($exec_xgc_result==0)
     {
       print F "XGC=TRUE \n";
@@ -246,7 +246,7 @@
       print F "XGC_AND_NOT_BOOTLOADER=FALSE \n";
       print "exec_xgc_result: $exec_xgc_result\n";
     }
-    
+
     if (lc($action) eq "bootloader")
     {
       print F "ACTION_IS_BOOTLOADER=TRUE \n";
@@ -266,7 +266,7 @@ Path: `make\Gsm2.mak`
 
 * Gsm2.mak
   * Option.mak
-    * USER_SPECIFIC.mak 
+    * USER_SPECIFIC.mak
   * make\ULTRA2503A_11C_gprs.mak
     ```Makefile
     # *************************************************************************
@@ -290,7 +290,7 @@ Path: `make\Gsm2.mak`
     ifeq ($(strip $(NEED_BUILD_BOOTLOADER)),TRUE)
       ifeq ($(filter bootloader, $(strip $(CUS_REL_SRC_COMP))),bootloader)
         ifneq ($(filter UMTS HSPA TDD128 TDD128DPA TDD128HSPA,$(strip $(call Upper,$(PROJECT)))),)
-        
+
   # add for daily build, add "codegen_check" after "code_gen"
   new : backup cleanall genlog cleancodegen asngen umts_gen ss_lcs_gen codegen codegen_check asnregen cleanbin mcddll_update resgen nvram_auto_gen bootloader remake
         else
@@ -357,9 +357,9 @@ Path: `make\Gsm2.mak`
     #  Update Build
     # *************************************************************************
     #update : genlog cleanbin codegen mcddll_update resgen cksysdrv_slim remake
-    
+
     ifeq ($(strip $(ACTION)),slim_update)
-    
+
     ifeq ($(strip $(CUSTOM_RELEASE)),TRUE)
       ifeq ($(strip $(CUSTOM)),MONZA29)
     update : backup genlog codegen remake
@@ -377,10 +377,10 @@ Path: `make\Gsm2.mak`
     update : backup genlog cleanbin codegen resgen mmi_obj_check cksysdrv_slim remake
       endif
     endif
-    
+
     else  
     ## update
-    
+
     ifeq ($(strip $(CUSTOM_RELEASE)),TRUE)
       ifeq ($(strip $(CUSTOM)),MONZA29)
     update : backup genlog codegen remake
@@ -401,7 +401,7 @@ Path: `make\Gsm2.mak`
     update : backup genlog cleanbin codegen mcddll_update resgen mmi_obj_check cksysdrv_slim remake
       endif
     endif
-    
+
     endif
     ```
     * `remake : backup mcp_check genlog cleanbin genverno genoriverno libs $(BIN_FILE) cmmgen cfggen catgen done`
@@ -446,14 +446,14 @@ Path: `make\Gsm2.mak`
         endif
       endif
       else
-      remake : backup libs copylintlog genlintstatlog done 
+      remake : backup libs copylintlog genlintstatlog done
       endif
       else # MODIS_CONFIG == TRUE
       remake : mcp_check genlog cleanbin genverno genoriverno
       endif #ifeq ($(strip $(MODIS_CONFIG)),FALSE)
-      ```Makefile
+      ```
       * `libs : echo_lib_lists cleanlib startbuildlibs xgc_all_libs_2`
-        ```
+        ```Makefile
         # *************************************************************************
         # Library Targets
         # *************************************************************************
@@ -464,13 +464,13 @@ Path: `make\Gsm2.mak`
         endif
         endif
         endif
-        
+
         ifneq ($(strip $(LINT)),TRUE)
         ifneq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
         libs: cleanlib startbuildlibs $(COMPLIBLIST)
-        else 
+        else
         libs : echo_lib_lists cleanlib startbuildlibs xgc_all_libs_2
-        endif 
+        endif
         else
         libs: $(LINT_COMP_LIST)
         endif
@@ -483,7 +483,7 @@ Path: `make\Gsm2.mak`
           	@echo COMPLIBLIST=$(COMPLIBLIST) > make\complib.txt
              # mbis time probe
           	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
-          
+
           ifeq ($(strip $(MODIS_CONFIG)),FALSE)
             startbuildlibs: gencompbld
           else
@@ -493,13 +493,13 @@ Path: `make\Gsm2.mak`
           	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_S,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
           	@echo Start to build $(COMPLIBLIST)
           # Copy plutommi header files to a temp folder to improve compiler performance.
-          
+
           ifeq ($(strip $(REDUCE_HEADER_DEPTH)),TRUE)
           	@perl -e "print 'hTogether START TIME='";>>$(strip $(TARGDIR))\build.log
           	@perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
-          
+
           	@if exist $(COPY_MMI_INCLUDE_FILE) (copy /Y $(COPY_MMI_INCLUDE_FILE) tools\copy_mmi_include_h.bat >NUL)
-          
+
           ifeq ($(strip $(RUN_HTOGETHER)),TRUE)
           	@if exist $(CUS_MTK_LIB)\tools\copy_mmi_include_h.bat (copy $(CUS_MTK_LIB)\tools\copy_mmi_include_h.bat tools\copy_mmi_include_h.bat  >NUL)
             ifeq ($(strip $(MMI_VERSION)),NEPTUNE_MMI)
@@ -513,12 +513,12 @@ Path: `make\Gsm2.mak`
           	@if exist tools\mmi_include.dep (del /q /f tools\mmi_include.dep)
           	@if not exist $(strip $(HEADER_TEMP)) (md $(strip $(HEADER_TEMP)))
           	-@if exist tools\copy_mmi_include_h.bat (tools\copy_mmi_include_h.bat $(strip $(HEADER_TEMP)) 1>nul)
-          
+
           	@perl -e "print 'hTogether END TIME='";>>$(strip $(TARGDIR))\build.log
           	@perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
-          
+
           endif
-          
+
              # mbis time probe
           	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
           ```
@@ -540,7 +540,7 @@ Path: `make/Gsm2.mak`
     	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_S,$@,T,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
     	@perl -e "print 'gen_bl_verno START TIME='";>>$(strip $(TARGDIR))\build.log
     	@perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
-    
+
     	@echo Generate BOOTLOADER CMM file ...
     #	@echo [Dependency] tools\CMMAutoGen.pl >$(basename $@).log
         # echo .\BOOTLOADER_ULTRA2503A_11C_MT6261_nocode.cmm
@@ -551,17 +551,17 @@ Path: `make/Gsm2.mak`
         # .\EXT_BOOTLOADER_ULTRA2503A_11C_MT6261_nocode.cmm
         # echo .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3_ext.elf
         # .\build\ULTRA2503A_11C)\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3_ext.elf
-        # 
+        #
         # build\ULTRA2503A_11C\log\cmmgen_blnocode.log
         #     ACTION: 3,
         #     CMMFILE: .\EXT_BOOTLOADER_ULTRA2503A_11C_MT6261_nocode.cmm,
         #     CMMDIR: .
-        #     ELFFILE: .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3_ext.elf, 
+        #     ELFFILE: .\build\ULTRA2503A_11C\ULTRA2503A_11C_BOOTLOADER_V005_MT6261_MAUI_11C_W13_52_SP3_V3_ext.elf,
         #     MAKEFILE: make\ULTRA2503A_11C_gprs.mak
-        #     MAUI_BIN: ULTRA2503A_11C_PCB01_gprs_MT6261_S00.MAUI_11C_W13_52_SP3_V3.bin, 
+        #     MAUI_BIN: ULTRA2503A_11C_PCB01_gprs_MT6261_S00.MAUI_11C_W13_52_SP3_V3.bin,
         #     LISFILE: ~lis_temp
-        #     CC_CMD: C:\Progra~1\ARM\RVCT\Programs\3.1\569\win_32-pentium\armcc.exe --thumb      , 
-        #     VIA_CMD: --via, 
+        #     CC_CMD: C:\Progra~1\ARM\RVCT\Programs\3.1\569\win_32-pentium\armcc.exe --thumb      ,
+        #     VIA_CMD: --via,
         #     OPTION_TMP: make\~customIncDef.tmp
         #     BIN_PATH: .\build\ULTRA2503A_11C\ULTRA2503A_11C_PCB01_gprs_MT6261_S00.MAUI_11C_W13_52_SP3_V3.bin
         echo $(FIXPATH)\BOOTLOADER_$(strip $(CUSTOMER))_$(strip $(PLATFORM))_nocode.cmm
@@ -573,20 +573,20 @@ Path: `make/Gsm2.mak`
     		(if ERRORLEVEL 1 echo Error: generate BOOTLOADER CMM file Failed. Please check $(strip $(COMPLOGDIR))\cmmgen_blnocode.log & exit 1) & \
     		(perl tools\CMMAutoGen.pl 3 $(FIXPATH)\EXT_BOOTLOADER_$(strip $(CUSTOMER))_$(strip $(PLATFORM))_nocode.cmm $(strip $(TARGDIR))\$(BTLD_EXT_PREFIX).elf $(strip $(THE_MF)) $(strip $(BIN_FILE)) ~lis_temp "$(CC)" "$(VIA)" make\~customIncDef.tmp $(strip $(INSIDE_MTK)) > $(strip $(COMPLOGDIR))\cmmgen_extblnocode.log) & \
     		(if ERRORLEVEL 1 echo Error: generate EXT_BOOTLOADER CMM file Failed. Please check $(strip $(COMPLOGDIR))\cmmgen_extblnocode.log & exit 1))
-    
+
     	@echo Generate BOOTLOADER version number ...
     	@if not exist $(strip $(BTLDVERNODIR)) exit 0
-    
+
     	@if exist $(strip $(BTLDVERNODIR))\bl_verno.c (del $(strip $(BTLDVERNODIR))\bl_verno.c)
-    
+
     	@echo #include "kal_release.h" > $(strip $(BTLDVERNODIR))\bl_verno.c
     	@echo const kal_uint32 CHECKSUM_SEED = $(strip $(BTLD_CHECKSUM_SEED)); >> $(strip $(BTLDVERNODIR))\bl_verno.c
     	@echo const kal_int8 BootLDVerno[5] = "$(strip $(BTLD_VERNO))"; >> $(strip $(BTLDVERNODIR))\bl_verno.c
-    
+
     ifeq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
     	@echo COMPLIBLIST=$(BL_COMPLIBLIST) > make\complib.txt
     endif
-    
+
     	@perl -e "print 'gen_bl_verno END TIME='";>>$(strip $(TARGDIR))\build.log
     	@perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
        # mbis time probe
@@ -629,10 +629,10 @@ Path: `make/Gsm2.mak`
     else
     	@if /I "$(strip $(MBIS_EN))" EQU "TRUE" (@perl -e "print 'T_S,$@,L,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
     endif
-    
+
     	@if exist $(strip $(COMPLIBDIR))\$*.lib (del /q $(strip $(COMPLIBDIR))\$*.lib)
     	@if not exist $(strip $(COMPLIBDIR)) (md $(COMPLIBDIR))
-    
+
     	$(info "------------------------XGC_AND_NOT_BOOTLOADER:" $(XGC_AND_NOT_BOOTLOADER))
     	$(info "FOTA_LOG:" $(FOTA_LOG))
     	$(info "BOOTLOADER_LOG:" $(BOOTLOADER_LOG))
@@ -649,12 +649,12 @@ Path: `make/Gsm2.mak`
     				(@echo Beginning $* component build process ... > $(BOOTLOADER_EXT_LOG)) \
     			else \
     				(@echo Beginning $* component build process ... >> $(LOG))
-    
+
     	@perl tools\time.pl
     	@echo zengjf $*
     	@echo Building $*
     	@echo                     LOG: $(strip $(COMPLOGDIR))\$*.log
-    
+
     	$(info "----------------OBJSDIR:" $(OBJSDIR))
     	$(info "ACTION:" $(ACTION))
     	@if not exist $(strip $(OBJSDIR))\$* (md $(strip $(OBJSDIR))\$*)
@@ -688,7 +688,7 @@ Path: `make/Gsm2.mak`
       endif
     endif
     # End of extract obj
-    
+
     	$(info "------------------build log:" $(strip $(TARGDIR))\build.log)
     	@perl -e "print '$* START TIME='";>>$(strip $(TARGDIR))\build.log
     	@perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
@@ -701,7 +701,7 @@ Path: `make/Gsm2.mak`
     ifneq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
     	$(info tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) --no-print-directory COMPONENT=$* setup_env > $(strip $(COMPLOGDIR))\$*_setEnv.log 2>&1)
     	tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) --no-print-directory COMPONENT=$* setup_env > $(strip $(COMPLOGDIR))\$*_setEnv.log 2>&1
-    
+
       ifeq ($(strip $(call Upper,$(BM_NEW))),TRUE)
     			@if not exist $(strip $(COMPLOGDIR))\$* md $(strip $(COMPLOGDIR))\$*
     			(tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) COMPONENT=$* update_lib > $(strip $(COMPLOGDIR))\$*.log 2>&1) & \
@@ -727,10 +727,10 @@ Path: `make/Gsm2.mak`
     			  (rd /S /Q $(strip $(COMPLOGDIR))\$*) \
     		)
       endif
-    
+
     else
     #XGC
-    
+
     	$(info "BM_NEW" $(BM_NEW))
       ifeq ($(strip $(call Upper,$(BM_NEW))),TRUE)
     			XGConsole /command="tools\make.exe  -fmake\intermed.mak -k -r -R $(strip $(CMD_ARGU))  " /NOLOGO /profile="tools\XGConsole.xml"
@@ -738,7 +738,7 @@ Path: `make/Gsm2.mak`
     			XGConsole /command="tools\make.exe  -fmake\intermed.mak -r -R $(strip $(CMD_ARGU))   " /NOLOGO /profile="tools\XGConsole.xml"
       endif
     endif
-    
+
     	$(info "XGC_AND_NOT_BOOTLOADER" $(XGC_AND_NOT_BOOTLOADER))
     ifneq ($(strip $(XGC_AND_NOT_BOOTLOADER)),TRUE)
     	@if $*==fota \
@@ -751,23 +751,23 @@ Path: `make/Gsm2.mak`
     				(@type $(strip $(COMPLOGDIR))\$*.log >> $(BOOTLOADER_EXT_LOG)) \
     			else \
     				(@type $(strip $(COMPLOGDIR))\$*.log >> $(LOG))
-    
+
     	@perl .\tools\chk_lib_err_warn.pl $(strip $(COMPLOGDIR))\$*.log
     endif
-    
+
     else
     #LINT
     	@if not exist $(COMPLINTLOGDIR)	(md $(COMPLINTLOGDIR))
     	@if exist $(strip $(COMPLINTLOGDIR))\targetl.end del /F /Q $(strip $(COMPLINTLOGDIR))\targetl.end
     	@if exist $(strip $(COMPLINTLOGDIR))\$*_build.log del /F /Q $(strip $(COMPLINTLOGDIR))\$*_build.log
     	@if exist $(strip $(COMPLINTLOGDIR))\$*.log del /F /Q $(strip $(COMPLINTLOGDIR))\$*.log
-    	tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) COMPONENT=$* update_lib> $(strip $(COMPLINTLOGDIR))\$*_build.log 2>&1 
+    	tools\make.exe -fmake\comp.mak -k -r -R $(strip $(CMD_ARGU)) COMPONENT=$* update_lib> $(strip $(COMPLINTLOGDIR))\$*_build.log 2>&1
     endif
     	perl -e "print '$* END TIME='";>>$(strip $(TARGDIR))\build.log
     	perl tools\time.pl -n>>$(strip $(TARGDIR))\build.log
        # mbis time probe
     ifneq ($(strip $(XGC)),TRUE)
-    	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (if exist $(TARGDIR)\log\mbis\$*\*.mbis (perl tools\mbis.pl -o $(TARGDIR)\log\mbis\$*)) 
+    	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (if exist $(TARGDIR)\log\mbis\$*\*.mbis (perl tools\mbis.pl -o $(TARGDIR)\log\mbis\$*))
     	@if exist $(TARGDIR)\log\mbis\$*\*.mbis ((del /q /f $(TARGDIR)\log\mbis\$*\*.mbis) & (rmdir /S /Q $(TARGDIR)\log\mbis\$*))
     	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$(@F),L,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
     else
@@ -776,7 +776,7 @@ Path: `make/Gsm2.mak`
     endif #ifneq ($(strip $(MODIS_CONFIG)),TRUE)
     ```
   * `tools\make.exe -fmake\comp.mak -k -r -R -j4 --no-print-directory COMPONENT=bootloader setup_env > .\build\ULTRA2503A_11C\log\bootloader_setEnv.log 2>&1`
-  * `tools\make.exe -fmake\comp.mak -r -R -j4 COMPONENT=bootloader update_lib > .\build\ULTRA2503A_11C\log\bootloader.log 2> &1`
+  * `tools\make.exe -fmake\comp.mak -r -R -j4 COMPONENT=bootloader update_lib > .\build\ULTRA2503A_11C\log\bootloader.log 2>&1`
   * Make Help
     ```Shell
     Usage: make [options] [target] ...
@@ -859,11 +859,11 @@ Path: `make/Gsm2.mak`
     # *************************************************************************
     update_lib: $(TARGLIB)
     	@if exist $(RULESDIR)\$(strip $(COMPONENT))_dep rd /s /q $(RULESDIR)\$(strip $(COMPONENT))_dep
-    
+
     ifeq ($(strip $(RVCT_MULTI_FILE)),NONE)
-    
+
     $(TARGLIB) :
-    
+
        # If library for customer release exists.
        # Copy and update it or create a new one
        # mbis time probe
@@ -872,7 +872,7 @@ Path: `make/Gsm2.mak`
     		(del /f /q $(OBJ_ARCHIVE))
     	@if exist $(OBJ_ARCHIVE_SORT) \
     		(del /f /q $(OBJ_ARCHIVE_SORT))
-    
+
     ifneq ($(words $(CFLAGS)),0)
     	@echo CFLAGS = $(strip $(CFLAGS))
     endif
@@ -885,11 +885,11 @@ Path: `make/Gsm2.mak`
     ifneq ($(words $(ADEFS)),0)
     	@echo ADEFS = $(strip $(ADEFS))
     endif
-    
+
     	@for %%i in ($(COMPOBJS_DIR)/*.obj) do \
     		echo $(COMPOBJS_DIR)/%%i>>$(OBJ_ARCHIVE)
     	@perl .\tools\sortobj.pl $(OBJ_ARCHIVE) $(OBJ_ARCHIVE_SORT)
-    
+
     ifneq ($(filter $(PARTIAL_TRACE_LIB),$(COMPONENT)),)
     	@if exist $(FIXPATH)\$(CUS_MTK_LIB_TRACE)\$(strip $(COMPONENT)).lib \
     		(copy /z $(FIXPATH)\$(CUS_MTK_LIB_TRACE)\$(strip $(COMPONENT)).lib $(subst /,\,$(TARGLIB)))
@@ -897,16 +897,16 @@ Path: `make/Gsm2.mak`
     	@if exist $(FIXPATH)\$(CUS_MTK_LIB)\$(strip $(COMPONENT)).lib \
     		(copy /z $(FIXPATH)\$(CUS_MTK_LIB)\$(strip $(COMPONENT)).lib $(subst /,\,$(TARGLIB)))
     endif
-    
+
     	$(strip $(LIB)) -create $(TARGLIB) $(VIA) $(OBJ_ARCHIVE_SORT)
-    
+
     	@echo $(TARGLIB) is updated
-    
+
     	@if exist $(OBJ_ARCHIVE) \
     		(del /f /q $(OBJ_ARCHIVE))
     	@if exist $(OBJ_ARCHIVE_SORT) \
     		(del /f /q $(OBJ_ARCHIVE_SORT))
-    
+
     ifeq ($(strip $(AUTO_CHECK_DEPEND)),TRUE)
       ifneq ($(ACTION),remake)
         # delete $module.dep, otherwise there will be duplicated info appended, becasue *.det are already extracted from $module.dep
@@ -936,10 +936,10 @@ Path: `make/Gsm2.mak`
        # mbis time probe
     	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (@perl -e "print 'T_E,$@,L,'. time . \"\n\"";>>$(TARGDIR)\log\mbis\$(strip $(COMPONENT))\$(*F)".mbis")
     endif
-    
+
     ifeq ($(strip $(RVCT_MULTI_FILE)),MULTI_FILE)
     ifeq ($(strip $(COMPILER)),RVCT)
-    
+
     $(TARGLIB):
        # mbis time probe
     	@if /I "$(strip $(MBIS_EN_OBJ_LOG))"  EQU "TRUE" (@perl -e "print 'T_S,$@,L,'. time . \"\n\"";>>$(TARGDIR)\log\mbis\$(strip $(COMPONENT))\$(*F)".mbis")
@@ -948,12 +948,12 @@ Path: `make/Gsm2.mak`
     	@tools\strcmpex.exe $(ACTION) remake n $(*F).via  $(CINTWORK) -c $(CFLAGS) $(CDEFS) $(CINCDIRS) --multifile -o $(COMPOBJS_DIR)/$(strip $(COMPONENT)).obj $(CPPSRCS) $(CSRCS) $<
     	@if exist $(*F).via tools\warp.exe $(*F).via
     	@if exist $(*F).via $(CMPLR) -via $(*F).via
-    
+
     	@if exist $(OBJ_ARCHIVE) \
     		(del /f /q $(OBJ_ARCHIVE))
     	@if exist $(OBJ_ARCHIVE_SORT) \
     		(del /f /q $(OBJ_ARCHIVE_SORT))
-    
+
     ifneq ($(words $(CFLAGS)),0)
     	@echo CFLAGS = $(strip $(CFLAGS))
     endif
@@ -966,11 +966,11 @@ Path: `make/Gsm2.mak`
     ifneq ($(words $(ADEFS)),0)
     	@echo ADEFS = $(strip $(ADEFS))
     endif
-    
+
     	@for %%i in ($(COMPOBJS_DIR)/*.obj) do \
     		echo $(COMPOBJS_DIR)/%%i>>$(OBJ_ARCHIVE)
     	@perl .\tools\sortobj.pl $(OBJ_ARCHIVE) $(OBJ_ARCHIVE_SORT)
-    
+
     ifneq ($(filter $(PARTIAL_TRACE_LIB),$(COMPONENT)),)
     	@if exist $(FIXPATH)\$(CUS_MTK_LIB_TRACE)\$(strip $(COMPONENT)).lib \
     		(copy /z $(FIXPATH)\$(CUS_MTK_LIB_TRACE)\$(strip $(COMPONENT)).lib $(subst /,\,$(TARGLIB)))
@@ -978,11 +978,11 @@ Path: `make/Gsm2.mak`
     	@if exist $(FIXPATH)\$(CUS_MTK_LIB)\$(strip $(COMPONENT)).lib \
     		(copy /z $(FIXPATH)\$(CUS_MTK_LIB)\$(strip $(COMPONENT)).lib $(subst /,\,$(TARGLIB)))
     endif
-    
+
     	$(strip $(LIB)) -create $(TARGLIB) $(VIA) $(OBJ_ARCHIVE_SORT)
-    
+
     	@echo $(TARGLIB) is updated
-    
+
     	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT)).dep if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det type $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det >> $(RULESDIR)\$(strip $(COMPONENT)).dep
     	@if not $(ACTION)==remake if not exist $(RULESDIR)\$(strip $(COMPONENT)).dep if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det type $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det > $(RULESDIR)\$(strip $(COMPONENT)).dep
     	@if not $(ACTION)==remake if exist $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det del /f /q $(RULESDIR)\$(strip $(COMPONENT))_dep\*.det
@@ -1014,18 +1014,18 @@ Path: `make/Gsm2.mak`
   # *************************************************************************
   LINK_BL: LINK_BL_BIN_FILE LINK_BLEXT_BIN_FILE
   BL_POSTBUILD: BLFILE_POSTBUILD BLEXTFILE_POSTBUILD
-  
+
   #ifneq ($(strip $(AUTO_CHECK_DEPEND)),TRUE)
   #$(BTLD_BIN_FILE): FORCE
   #else
   #-include $(strip $(RULESDIR_TARGET))\postgen_dep\.\bootloader.det
   #endif
   #$(BTLD_BIN_FILE): $(strip $(RULESDIR_TARGET))\postgen_dep\bl_preflow.det $(strip $(RULESDIR_TARGET))\postgen_dep\gen_bl_verno.det
-  
+
   LINK_BL_BIN_FILE:
   	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_S,$@,B,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
   	@tools\make.exe -fmake\gsm2.mak -k -r -R XGC_AND_NOT_BOOTLOADER=FALSE CUSTOMER=$(strip $(CUSTOMER)) PROJECT=$(strip $(PROJECT)) bootloader.lib
-  
+
   	@echo Linking $(strip $(BTLD_PREFIX)) ...
   	@perl tools\time.pl -n
   	@echo $(BTLDLNKOPT) > make\~libs.tmp
@@ -1041,9 +1041,9 @@ Path: `make/Gsm2.mak`
   				(echo Error: link failed! Please check $(BOOTLOADER_LOG)) & \
   				(if exist $(strip $(TARGDIR))\$(BTLD_PREFIX).elf (del /q $(strip $(TARGDIR))\$(BTLD_PREFIX).elf)))
     endif
-   
+
   	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_E,$@,B,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
-  
+
   BLFILE_POSTBUILD:
   	@if /I "$(strip $(MBIS_EN))"  EQU "TRUE" (@perl -e "print 'T_S,$@,B,'. time . \"\n\"";>>$(MBIS_BUILD_TIME_TMP))
   	@if not exist $(strip $(TARGDIR))\$(BTLD_PREFIX).elf \
@@ -1062,19 +1062,19 @@ Path: `make/Gsm2.mak`
   		copy /Y $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE))\READ_ONLY $(strip $(TARGDIR))\READ_ONLY & \
   		rmdir /S /Q $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) & \
   		move /Y $(strip $(TARGDIR))\READ_ONLY $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE))
-  
+
   	(@if /I "$(strip $(SW_BINDING_SUPPORT))" EQU "BIND_TO_CHIP"  .\tools\update_img.exe -blpath $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) -keyini $(strip $(KEYFILE_PATH))) & \
   	(@if /I "$(strip $(SW_BINDING_SUPPORT))" EQU "BIND_TO_KEY"   .\tools\update_img.exe -blpath $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) -keyini $(strip $(KEYFILE_PATH))) & \
-  
+
   	@perl .\tools\bl_append.pl $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) $(strip $(BTLDVERNODIR))\bl_verno.c $(strip $(BL_SCATTERFILE)) $(strip $(THE_MF)) $(strip $(TARGDIR))\$(BTLD_PREFIX).sym $(call Upper,$(strip $(BIN_FILE))) $(strip $(VERNO))
   #	@echo [Dependency] tools\update_img.exe $(KEYFILE_PATH) tools\bl_append.pl >$(RULESDIR)\postgen_dep\bootloader.log
   endif
-  
+
   	@if exist $(strip $(TARGDIR))\$(strip $(BIN_FILE))\ROM \
   		(if exist $(strip $(TARGDIR))\$(strip $(BIN_FILE))\$(strip $(BTLD_BIN_FILE)) \
   			del $(strip $(TARGDIR))\$(strip $(BIN_FILE))\$(strip $(BTLD_BIN_FILE))) & \
   		copy /Y $(strip $(TARGDIR))\$(strip $(BTLD_BIN_FILE)) $(strip $(TARGDIR))\$(strip $(BIN_FILE)) > nul
-  
+
     ifeq ($(strip $(PARTIAL_SOURCE)),TRUE)
   	tools\Linker.exe BOOTLOADERs $(strip $(LINK)) $(strip $(LOG)) $(strip $(LNKERRORLOG)) $(strip $(VIA)) $(strip $(HEADER_TEMP)) $(strip $(BIN_CREATE)) $(strip $(TARGDIR)) $(strip $(IMG_FILE)) $(strip $(BIN_FORMAT)) $(strip $(BTLD_BIN_FILE)) $(strip $(TST_DB)) $(TARGNAME).lis
     endif
