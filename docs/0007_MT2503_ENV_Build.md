@@ -1,5 +1,7 @@
 # MT2503 ENV Build
 
+操作系统尽量使用英文操作系统，血的教训。
+
 # RVCT Install
 
 * 安装Perl：`ActivePerl-5.8.8.822-MSWin32-x86-280952.msi`；

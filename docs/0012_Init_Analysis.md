@@ -555,7 +555,7 @@
   }
   ```
 * `plutommi/mmi/Factory/FactorySrc/Factory.c`
-  ```
+  ```C
   [...省略]
   /* For the detail information, please refer to the FactoryGprot.h */
   mmi_factory_obj_struct *mmi_factory_new_obj_ex(
@@ -617,7 +617,7 @@
   [...省略]
   ```
 * `plutommi/mmi/Idle/IdleSrc/IdleClassic.c`
-  ```
+  ```C
   void mmi_idle_classic_on_init(mmi_idle_obj_struct *obj)
   {
       /*----------------------------------------------------------------*/
