@@ -8,6 +8,7 @@
 
 ## 分析、测试、验证文档
 
+* [0014_Home_Page_Names_Modify.md](./docs/0014_Home_Page_Names_Modify.md)
 * [0013_Simulation_VS2008_Env.md](./docs/0013_Simulation_VS2008_Env.md)
 * [0012_Init_Analysis.md](./docs/0012_Init_Analysis.md)
 * [0011_Architecture_of_MAUI.md](./docs/0011_Architecture_of_MAUI.md)
