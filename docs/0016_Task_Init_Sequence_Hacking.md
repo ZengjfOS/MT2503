@@ -1,5 +1,7 @@
 # Task Init Sequence Hacking
 
+参考资料有说一个Task可以对多个Mod，不过在跟了INDX_MMI发现，`task_module_map(INDX_MMI, MOD_MMI)`只映射了一个Mod，目前没有发现有多重映射的问题出现。
+
 ## 参考文档
 
 * [mtk架构分析资料详解](https://blog.csdn.net/qq_39902554/article/details/77855385)
