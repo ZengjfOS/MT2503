@@ -8,6 +8,7 @@
 
 ## 分析、测试、验证文档
 
+* [0019_GPIO_Driver.md](./docs/0019_GPIO_Driver.md)
 * [0018_Task_Understand_Message.md](./docs/0018_Task_Understand_Message.md)
 * [0017_Power_On.md](./docs/0017_Power_On.md)
 * [0016_Task_Init_Sequence_Hacking.md](./docs/0016_Task_Init_Sequence_Hacking.md)
