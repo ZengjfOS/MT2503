@@ -2,6 +2,7 @@
 
 ## 参考文档
 
+* [mtk架构分析资料详解](https://blog.csdn.net/qq_39902554/article/details/77855385)
 * [MTK task](https://blog.csdn.net/hua_zai_arm/article/details/72792655)
 * [MTK进阶——TASK创建及使用](https://blog.csdn.net/sheldon4090/article/details/6796737)
 * [MTK task](https://blog.csdn.net/junjie319/article/details/8823042)
@@ -592,5 +593,384 @@
      mod_task_g[MOD_MMS] = mod_task_g[MOD_WAP];
   #endif
      return;
+  }
+  ```
+* `plutommi/Framework/Tasks/TasksSrc/MMITask.c`
+  ```C
+  MMI_BOOL MMI_Init(task_indx_type task_indx)
+  {
+      /*----------------------------------------------------------------*/
+      /* Local Variables                                                */
+      /*----------------------------------------------------------------*/
+  
+      /*----------------------------------------------------------------*/
+      /* Code Body                                                      */
+      /*----------------------------------------------------------------*/
+      #ifdef __DRM_SUPPORT__
+      mmi_mutex_trace = kal_create_mutex("mmi_trace");
+      #endif
+  
+      InitFileSystem();
+      applib_mime_init();
+      mmi_frm_init_key_event();
+      mmi_frm_fix_mem_init();
+      mmi_frm_event_flag_create();
+      mmi_frm_init_scenario();
+  
+  #if defined(__MTK_TARGET__) && defined(__DCM_WITH_COMPRESSION_MAUI_INIT__)
+      /* mmi_frm_appmem_stage1_init is called in the end of MAUI init. */
+  #else
+      mmi_frm_appmem_stage1_init();
+  #endif
+  
+      /* 
+       * initial the system service timer 
+       */
+      L4InitTimer();
+      setup_UI_wrappers();
+  
+      mmi_fe_init();
+  #ifdef GUI_INPUT_BOX_CACHE_SUPPORT
+      /* init the editor cache mutext */
+      gui_inputs_cache_init_mutex();
+  #endif /* GUI_INPUT_BOX_CACHE_SUPPORT */
+  
+      return MMI_TRUE;
+  }
+  [...省略]
+
+  void MMI_task(oslEntryType *entry_param)
+  {
+      /*----------------------------------------------------------------*/
+      /* Local Variables                                                */
+      /*----------------------------------------------------------------*/
+      MYQUEUE Message;
+      oslMsgqid qid;
+  
+      U32 count = 0;
+      U32 queue_node_number = 0;
+  
+  
+      /*----------------------------------------------------------------*/
+      /* Code Body                                                      */
+      /*----------------------------------------------------------------*/
+      qid = task_info_g[entry_param->task_indx].task_ext_qid;
+      mmi_ext_qid = qid;
+      mmi_frm_nvram_cache_validate();
+      InitEventHandlersBeforePowerOn();
+      mmi_frm_set_event_flag(MMI_EVT_F_NOT_IN_NVRAM);
+      mmi_frm_set_event_flag(MMI_EVT_F_NOT_IN_GDD);
+      mmi_frm_set_event_flag(MMI_EVT_F_SCRM_ALLOC);
+  
+      while (1)
+      {
+          {
+  
+              if (g_keypad_flag == MMI_TRUE)
+              {
+                  mmi_frm_key_handle(NULL);
+              //#ifdef __VENUS_UI_ENGINE__
+              //    vfx_mmi_check_update();
+              //#endif  
+  
+              //#if defined(__MMI_TOUCH_SCREEN__) && defined(__MTK_TARGET__)
+                  /* MAUI_01901848
+                   * END key down->mmi_pen_disable
+                   * so during the END key down, mmi_frm_pen_flush_queue will always return MMI_FALSE
+                   * g_has_switch_screen will not has the opportunity to reset to MMI_FALSE;
+                   * If the END key's up event is handle here(the upper function) and the Message
+                   * MSG_ID_TP_EVENT_IND is in the MMI external queue and it is the first message in the queue
+                   * that need to be handled and the first pen event is pen down in the pen event buffer.
+                   * After pen down is handled in the protocol event handler, pen abort will be generated
+                   * The behavior is not right, so we add reset_context_for_new_screen here.
+                   */
+                  /* Make sure there should be a new start for pen event when entering new screen */
+              //#ifdef __MMI_VUI_3D_CUBE_APP__
+              //    if (!vadp_p2v_uc_is_in_venus())
+              //#endif
+              //    {
+              //        mmi_frm_pen_reset_context_for_new_screen();
+              //    }
+              //#endif                
+                                
+              }
+              
+              if (g_pen_flag == MMI_TRUE)
+              {
+              #ifdef __MMI_TOUCH_SCREEN__
+                  mmi_frm_pen_handle();
+              #endif
+              //#if defined(__MMI_TOUCH_SCREEN__) && defined(__MTK_TARGET__)
+              //#ifdef __MMI_VUI_3D_CUBE_APP__
+              //    if (!vadp_p2v_uc_is_in_venus())
+              //#endif
+              //    {
+              //        /* Make sure there should be a new start for pen event when entering new screen */
+              //        mmi_frm_pen_reset_context_for_new_screen();
+              //    }                
+              //#endif
+              }
+  
+              /* Get Total count in external queue */
+              queue_node_number = msg_get_extq_messages();
+  
+              if ((g_pen_flag == MMI_FALSE) && (queue_node_number == 0) && (OslNumOfCircularQMsgs() == 0) && (g_keypad_flag == MMI_FALSE)&& vm_appcomm_queue_is_empty())
+              {
+                  U8 flag = 0;
+                  //ilm_struct ilm_ptr;
+  
+                  /* MMI task suspends for the queue */
+              #ifdef __VENUS_UI_ENGINE__
+                  vfx_mmi_onidle();
+              #endif
+                  if((g_pen_flag == MMI_FALSE) && (queue_node_number == 0) && (OslNumOfCircularQMsgs() == 0) && (g_keypad_flag == MMI_FALSE) && vm_appcomm_queue_is_empty())
+                  {
+                      MMI_TRACE(MMI_FW_TRC_G6_FRM_DETAIL, TRC_MMI_FRM_TASK_SUSPEND_EXTERNAL_Q);
+                      OslReceiveMsgExtQ(mmi_ext_qid, &Message);
+                      kal_set_active_module_id(MOD_MMI);
+  
+                  /* put Message in circular queue */
+                  //ilm_ptr.src_mod_id = Message.src_mod_id;
+                  //ilm_ptr.dest_mod_id = Message.dest_mod_id;
+                  //ilm_ptr.msg_id = Message.msg_id;
+                  //ilm_ptr.sap_id = Message.sap_id;
+                  //ilm_ptr.local_para_ptr = Message.local_para_ptr;
+                  //ilm_ptr.peer_buff_ptr = Message.peer_buff_ptr;
+  
+                      flag = OslWriteCircularQ(&Message);
+                      MMI_ASSERT(flag == 1);
+                  }
+                  else
+                  {
+                      mmi_frm_invoke_post_event();
+                      mmi_frm_fetch_msg_from_extQ_to_circularQ();
+                  }
+                  /* TIMER use special data in the local_para_ptr field. Can NOT treat as general ILM */
+                  //if (Message.src_mod_id != MOD_TIMER)
+                  //{
+                  //    hold_local_para(ilm_ptr.local_para_ptr);
+                  //    hold_peer_buff(ilm_ptr.peer_buff_ptr);
+                  //    OslFreeInterTaskMsg(&Message);
+                  //}
+              }
+              else
+              {
+                  mmi_frm_fetch_msg_from_extQ_to_circularQ();
+              }
+  
+              count = OslNumOfCircularQMsgs();
+              while (count > 0)
+              {
+                  /* 
+                   * Notify Venus UI in each message done 
+                   */
+                  #ifdef __VENUS_UI_ENGINE__
+                  vfx_mmi_before_process_msg();
+                  #endif                
+              
+                  kal_set_active_module_id(MOD_MMI);
+  
+                  if (OslReadCircularQ(&Message))
+                  {
+                      MMI_TRACE(MMI_FW_TRC_G1_FRM, TRC_MMI_FRM_TASK_MSG_HANDLE_BEGIN, Message.msg_id, Message.oslSrcId, Message.oslDestId);
+  
+                      #if defined(OBIGO_Q05A)
+                      if (Message.dest_mod_id == MOD_WAP)
+                      {
+                      //#if defined(OBIGO_Q05A)
+                          extern void mmi_wap_handle_msg(void *msgPtr);
+  
+                          mmi_wap_handle_msg((void*)&Message);
+                      //#endif /* OBIGO_Q05A */ 
+                      }
+                      //#if defined(OBIGO_Q05A)
+                      else if (Message.dest_mod_id == MOD_MMS)
+                      {
+                          extern void mmi_wap_handle_msg(void *msgPtr);
+                          mmi_wap_handle_msg((void*)&Message);
+                      }
+                      //#endif /* OBIGO_Q05A */ 
+                      //else
+                      #endif
+                      {
+                          switch (Message.msg_id)
+                          {
+                              case MSG_ID_TIMER_EXPIRY:
+                              {
+                                  //kal_uint16 msg_len;
+  
+                                  //EvshedMMITimerHandler(get_local_para_ptr(Message.oslDataPtr, &msg_len));
+                                  EvshedMMITimerHandler(&Message);
+                              }
+                                  break;
+  
+                              case MSG_ID_MMI_EQ_POWER_ON_IND:
+                              {
+                                  mmi_eq_power_on_ind_struct *p = (mmi_eq_power_on_ind_struct*) Message.oslDataPtr;
+  
+                                  srv_bootup_set_mode(p);
+  #if defined(__MMI_FE_VECTOR_FONT_ON_FILE_SYSTEM__)
+                                  if(p->poweron_mode == POWER_ON_PRECHARGE || p->poweron_mode == POWER_ON_CHARGER_IN ||
+                                  /*  p->poweron_mode == POWER_ON_ALARM || */ p->poweron_mode == POWER_ON_EXCEPTION
+                              #ifdef __MMI_USB_SUPPORT__
+                                      || p->poweron_mode == POWER_ON_USB
+                              #endif
+                                      )
+                                  {
+                                      mmi_fe_reset_font_boot_mode();
+                                  }
+  #endif
+  
+                                  /* To initialize data/time */
+                                  SetDateTime((void*)&(p->rtc_time));
+                                  gdi_init();
+                              #ifdef __VENUS_UI_ENGINE__
+                                  vfx_mmi_sys_init();
+                              #endif
+  
+                                  MMI_TRACE(MMI_FW_TRC_G1_FRM, TRC_MMI_FRM_TASK_POWER_PROC_BEGIN, p->poweron_mode);
+                                  mmi_frm_start_scenario(MMI_SCENARIO_ID_DEFAULT);
+                                  switch (p->poweron_mode)
+                                  {
+                                      case POWER_ON_KEYPAD:
+                                          //mmi_frm_start_scenario(MMI_SCENARIO_ID_DEFAULT);
+                                      #ifdef __MMI_DUAL_SIM_SINGLE_CALL__
+  /* under construction !*/
+                                      #endif
+  
+                                          g_charbat_context.PowerOnCharger = 0;
+  
+                                          /* disk check */
+                                  #if defined(__FLIGHT_MODE_SUPPORT__) && defined(__MMI_TELEPHONY_SUPPORT__)
+                                          g_phnset_cntx.curFlightMode = p->flightmode_state;
+                                  #endif 
+  
+                                          break;
+  
+                                      case POWER_ON_PRECHARGE:
+                                      case POWER_ON_CHARGER_IN:
+                             /************************************** 
+                              * Always send charger-in indication
+                              * to avoid fast repeating charger 
+                              * in-out b4 power-on completes
+                              * Lisen 04/13/2004
+                             ***************************************/
+                                          //mmi_frm_start_scenario(MMI_SCENARIO_ID_DEFAULT);
+                                          InitializeChargingScr();
+                                          if (!srv_charbat_is_charger_connect())
+                                          {
+                                              //QuitSystemOperation();
+                                          #ifdef __COSMOS_MMI_PACKAGE__    
+                                              srv_shutdown_exit_system(VAPP_DEVICE);
+                                          #else
+                                              srv_shutdown_exit_system(APP_CHARGER);
+                                          #endif
+                                          }
+                                          break;
+  
+                                      case POWER_ON_ALARM:
+                                      #ifdef __MMI_SUBLCD__
+                                          gdi_lcd_set_active(GDI_LCD_SUB_LCD_HANDLE);
+                                          gdi_layer_clear(GDI_COLOR_BLACK);
+                                          gdi_lcd_set_active(GDI_LCD_MAIN_LCD_HANDLE);
+                                      #endif /* __MMI_SUBLCD__ */ 
+                                          gdi_layer_clear(GDI_COLOR_BLACK);
+                                          //mmi_frm_start_scenario(MMI_SCENARIO_ID_DEFAULT);
+  
+                                          srv_reminder_pwr_on_hdlr(p);
+                                          
+                                          break;
+                                      case POWER_ON_EXCEPTION:
+  
+                                      #ifdef __MMI_DUAL_SIM_SINGLE_CALL__
+  /* under construction !*/
+                                      #endif
+                                          break;
+  
+                                      #ifdef __MMI_USB_SUPPORT__
+                                      case POWER_ON_USB:
+                             /***************************************
+                              * Because Aux task will not init in USB boot mode 
+                              * Interrupt service routine for clam detection CLAM_EINT_HISR() 
+                              * is not register, force the clam state to open 
+                              * If Aux task is necessary in USB mode, this tircky could be removed 
+                              * Robin 1209 
+                              ***************************************/
+                                          //mmi_frm_start_scenario(MMI_SCENARIO_ID_DEFAULT);                                        
+                                      #if defined(__COSMOS_MMI_PACKAGE__) && defined(__MMI_USB_SUPPORT__)
+                                      {
+                                          extern void vapp_usb_launch_usbmode(void);
+                                          vapp_usb_launch_usbmode();
+                                      }
+                                      #else
+                                          #ifdef __MMI_USB_SUPPORT__
+                                              mmi_usb_boot_init();
+                                          #endif
+                                      #endif
+                             /***************************************
+                              * To disable keypad tone state 
+                              ***************************************/
+                                          mmi_frm_kbd_set_tone_state(MMI_KEY_TONE_DISABLED);
+                                          break;
+                                      #endif /* __MMI_USB_SUPPORT__ */ 
+  
+                                      default:
+                                          break;
+                                  }
+  
+                              #if defined(__FLIGHT_MODE_SUPPORT__) && defined(__MMI_TELEPHONY_SUPPORT__)
+                                  mmi_flight_mode_power_on_ind_hdlr(p);
+                              #endif
+  
+                                  srv_bootup_power_on_ind_hdlr(p);
+                                  
+                                  MMI_TRACE(MMI_FW_TRC_G1_FRM, TRC_MMI_FRM_TASK_POWER_PROC_END, p->poweron_mode);
+                              }
+                                  break;
+  
+                              default:
+                              #ifdef __MULTI_VCARD_SUPPORT__
+                                  {
+                                  extern void vcard_app_common_hdlr(void *ilm);
+                                  vcard_app_common_hdlr((void*)&Message);
+                                  }
+                              #endif
+                                  mmi_frm_execute_current_protocol_handler(
+                                      (U16) Message.oslMsgId,
+                                      (void*)Message.oslDataPtr,
+                                      (int)Message.oslSrcId,
+                                      (void*)&Message);
+                                  break;
+                          }
+  
+                      }
+  
+                      OslFreeInterTaskMsg(&Message);
+                      mmi_frm_invoke_post_event();
+                      mmi_frm_send_log_by_bt();
+                      //#ifdef __COSMOS_MMI_PACKAGE__
+                      //mmi_frm_temp_check_all_free();
+                      //#endif
+                      MMI_TRACE(MMI_FW_TRC_G1_FRM, TRC_MMI_FRM_TASK_MSG_HANDLE_END, Message.oslMsgId, Message.oslSrcId, Message.oslDestId);
+                  }   /* OslReadCircularQ(&Message) */
+                  //queue_node_number = msg_get_extq_messages();
+                  count--;
+                  
+              /* for MRE message dispatcher */
+                  vm_appcomm_dispatch_msg();
+              //#if defined(__MMI_TOUCH_SCREEN__) && defined(__MTK_TARGET__)
+              //#ifdef __MMI_VUI_3D_CUBE_APP__
+              //    if (!vadp_p2v_uc_is_in_venus())
+              //#endif
+              //    {
+              //        /* Make sure there should be a new start for pen event when entering new screen */
+              //        mmi_frm_pen_reset_context_for_new_screen();
+              //    }                
+              //#endif
+              }
+              /* for MRE message dispatcher */
+              vm_appcomm_dispatch_msg();
+          }     
+      }
   }
   ```

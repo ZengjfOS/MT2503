@@ -8,6 +8,7 @@
 
 ## 分析、测试、验证文档
 
+* [0017_Power_On.md](./docs/0017_Power_On.md)
 * [0016_Task_Init_Sequence_Hacking.md](./docs/0016_Task_Init_Sequence_Hacking.md)
 * [0015_Hacking_Launcher.md](./docs/0015_Hacking_Launcher.md)
 * [0014_Home_Page_Names_Modify.md](./docs/0014_Home_Page_Names_Modify.md)
