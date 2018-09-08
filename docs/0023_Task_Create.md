@@ -8,7 +8,7 @@
 ## Create Task
 
 * `config/include/app/app_task_config.h`: 注意添加task的位置，只要在MTK默认的task之后添加，否者编译报错；
-  ```
+  ```C
   [...省略]
   /*********MTK RD add task before this line ****************/
   
@@ -70,8 +70,8 @@
   #endif
   /*************************Task CFG END******************/ 
   ```
-* `config/include/hal/stack_msgs.h`Message Id
-  ```
+* `config/include/hal/stack_msgs.h`: Message Id
+  ```C
   [...省略]
   #define MSG_ID_NAME(CK_MSG) MSG_ID_##CK_MSG##_CODE_CHECK_POINT, 
   
@@ -97,7 +97,7 @@
   ```
 * Path: `custom/zengjf`
   * 'zengjf.h'
-    ```
+    ```C
     #ifndef __ZENGJF__
     #define __ZENGJF__
     
@@ -107,7 +107,7 @@
     #endif // __ZENGJF__
     ```
   * 'zengjf.c'
-    ```
+    ```C
     /***************************************************************************** 
      * Include
      *****************************************************************************/ 
@@ -171,6 +171,13 @@
         return KAL_TRUE;
     }
     ```
+* `make/custom/custom.mak`
+  ```Makefile
+  INC_DIR += tst\local_inc \
+  		   custom\zengjf
+  
+  SRC_LIST += custom\zengjf\zengjf.c
+  ```
 
 ## Console Output
 
