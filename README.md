@@ -8,6 +8,7 @@
 
 ## 分析、测试、验证文档
 
+* [0024_Task_Message_Communication.md](./docs/0024_Task_Message_Communication.md)
 * [0023_Task_Create.md](./docs/0023_Task_Create.md)
 * [0022_Catcher_Database_Path.md](./docs/0022_Catcher_Database_Path.md)
 * [0021_Catcher_USB_UART.md](./docs/0021_Catcher_USB_UART.md)

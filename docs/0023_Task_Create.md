@@ -178,6 +178,17 @@
   
   SRC_LIST += custom\zengjf\zengjf.c
   ```
+* `make/config/config.mak`
+  ```
+  [...省略]
+  #  Define include path lists to INC_DIR
+  INC_DIR = interface\hwdrv \
+            tst\include \
+            tst\local_inc\
+            hal\system\DP\inc\
+            custom\zengjf
+  [...省略]
+  ```
 
 ## Console Output
 
