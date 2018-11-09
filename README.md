@@ -8,6 +8,7 @@
 
 ## 分析、测试、验证文档
 
+* [0028_GPS.md](./docs/0028_GPS.md)
 * [0027_BT.md](./docs/0027_BT.md)
 * [0026_Task_Debug_Printf.md](./docs/0026_Task_Debug_Printf.md)
 * [0025_Task_Sleep.md](./docs/0025_Task_Sleep.md)
