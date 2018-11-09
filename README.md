@@ -8,6 +8,8 @@
 
 ## 分析、测试、验证文档
 
+* [0027_BT.md](./docs/0027_BT.md)
+* [0026_Task_Debug_Printf.md](./docs/0026_Task_Debug_Printf.md)
 * [0025_Task_Sleep.md](./docs/0025_Task_Sleep.md)
 * [0024_Task_Message_Communication.md](./docs/0024_Task_Message_Communication.md)
 * [0023_Task_Create.md](./docs/0023_Task_Create.md)

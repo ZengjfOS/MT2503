@@ -10,6 +10,12 @@
 * `config/include/app/app_task_config.h`: 注意添加task的位置，只要在MTK默认的task之后添加，否者编译报错；
   ```C
   [...省略]
+  #define TASK_PRIORITY_ZENGJF_TEST  (KAL_PRIORITY_CLASS10 + 6)
+
+  #define TASK_PRIORITY_DRIVER_TEST  (KAL_PRIORITY_CLASS9 + 6)
+  #define TASK_PRIORITY_MBBMSDRV     (KAL_PRIORITY_CLASS9 + 7)
+  #define TASK_PRIORITY_CMMB         (KAL_PRIORITY_CLASS9 + 8)
+  [...省略]
   /*********MTK RD add task before this line ****************/
   
   /*************************Task CFG Begin****************/
